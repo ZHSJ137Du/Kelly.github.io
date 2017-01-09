@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/bootstrap.min.css">
+    <script src="__PUBLIC__/Admin/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/Admin/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .form-horizontal{
+            margin-left: 280px;
+            margin-top: 40px;
+        }
+        .anniu{
+            margin-top: 40px;
+            margin-left: 270px;
+        }
+        header{
+            width: 1150px;
+            text-align: center;
+        }
+        .left-line, .right-line{
+            width: 350px;
+            border:.5px solid #555555;
+            display: inline-block;
+            position: relative;
+            bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <!-- 左横线  -->
+    <div class="left-line"></div>
+    <h1 style="display: inline; margin:0 60px;font-family: 'microsoft yahei'; font-weight: bold;" > 网站设置</h1>
+    <!-- 右横线 -->
+    <div class="right-line"></div>
+</header>
+
+<form class="form-horizontal" action="{:U('update')}" method="post" role="form">
+    <div class="form-group">
+        <label for="firstname" class="col-sm-2 control-label">网站名称</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="title" name="title" style="width:270px;">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastname" class="col-sm-2 control-label">网站副标题</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="subtitle" name="subtitle" style="width:270px;">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="logo" class="col-sm-2 control-label">Logo</label>
+        <div class="col-sm-10">
+            <input type="file" id="logo_url">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="icp" class="col-sm-2 control-label">ICP备案号</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="icp" name="icp" style="width:270px;">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="icp" class="col-sm-2 control-label">URL模式</label>
+        <div class="col-sm-10">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="url_model" id="url_model" value="1" checked>查询式，形如：http://eduwind.com/index.php?r=course/view&id=12
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="url_model" id="url_model" value="2">路径式，形如：http://eduwind.com/course/12(注意，需要开启伪静态！)
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="icp" class="col-sm-2 control-label">站点统计代码</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" rows="3" name="web_code_count" style="width:300px;"></textarea>
+        </div>
+    </div>
+    <div class="anniu">
+        <button class="btn btn-primary"  type="submit" id="submit" target-form="form-horizontal">提交</button>
+</form>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+</body>
+</html>

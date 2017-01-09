@@ -1,0 +1,287 @@
+body{
+	font-family: '微软雅黑';
+	background-color: #fff;
+}
+
+header,footer{
+	width: 100%;
+}
+footer{
+	margin-top: 30px;
+	background-color: #0088cc !important;
+    color: #ffffff !important;
+}
+footer a{
+	color: #ffffff !important;
+}
+span{
+	font-size: 12px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.navbar-inverse{
+    background-color: #ececec;
+}
+.barnner{
+	width: 100%;
+	margin-top: 50px;
+}
+.main{
+	margin-top:50px;
+	padding-top:20px;
+}
+.left{
+	float: left;
+}
+.right{
+	float: left;
+}
+.clearboth{
+	clear: both;
+}
+.red{
+	color: red;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    background-color: #0088cc !important;
+    color: #ffffff !important;
+}
+.navbar-nav>li>a:hover{
+	/*background-image: -webkit-linear-gradient(top,#fff 0,#fff 100%);
+    background-image: -o-linear-gradient(top,#fff 0,#fff 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#fff));
+    background-image: linear-gradient(to bottom,#fff 0,#fff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#fff', GradientType=0);
+    background-repeat: repeat-x;
+    -webkit-box-shadow: inset 0 3px 9px rgba(0,0,0,.25);
+    box-shadow: inset 0 3px 9px rgba(0,0,0,.25);*/
+    background-color: #0088cc !important;
+    color: #ffffff !important;
+}
+.hot{
+	display: block;
+}
+.all{
+	margin-top: 20px;
+	display: block;
+}
+.a-item{
+	height: 80px;
+	margin: 10px auto;
+	background-color: #080808;
+	color: #fff;
+}
+.a-item a{
+	text-decoration: none;
+	color: #fff;
+}
+.a-m{
+	width: 60%;
+	height: 80px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.ai-img{
+	width: 40%;
+	height: 80px;
+}
+.s-title a{
+	width: 100px;
+	padding: 10px 20px;
+	font-size: 20px;
+	background-color: #3c3c3c;
+	color: #fff;
+	text-decoration: none;
+}
+.s-title .active,.s-title a:hover{
+	background-color: #0088cc !important;
+    color: #fff;
+}
+
+.m{
+	margin-top: 30px;
+}
+.s-item{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #a4a1a1;
+}
+.s-item:last-child{
+	border-bottom: 0px solid #a4a1a1;
+}
+.si-img{
+	width: 100px;
+	height: 80px;
+}
+.s-t{
+	font-size: 20px;
+}
+.s-l,.s-r{
+
+	font-size: 12px;
+}
+.s-l{
+	width: 80%;
+}
+.s-r{
+	width: 20%;
+	text-align: right;
+}
+.smp{
+	font-size: 20px;
+	margin-top: 5px;
+	padding: 5px;
+	background-color: #fff;
+}
+.footer-f,.footer-h{
+	text-align: center;
+}
+.footer-f{
+    width: 100%;
+    background-color: #056799 !important;
+    margin: 0
+}
+.litem{
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.item4{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #a4a1a1;
+}
+.i-img{
+	width: 35%;
+}
+.i-img img{
+	width: 100px;
+	height: 80px;
+}
+.i-m{
+	width: 65%;
+}
+.im-o{
+	margin-top: 20px;
+}
+.im-o a{
+	margin-left: 20px;
+	text-decoration: none;
+}
+.btn-join{
+	font-size: 16px;
+	border: 1px solid #a4a1a1;
+	border-radius: 5px;
+	padding: 2px 10px;
+}
+.bbs{
+	min-height: 600px;
+	background-color: #eee;
+	border-radius: 2px;
+}
+/*************************文章************************/
+.essay{
+	background-color: #fff;
+}
+.classify{
+	margin-bottom: 20px;
+}
+.classify a{
+	text-decoration: none;
+	font-size: 16px;
+	padding: 5px 10px;
+	background-color: #eee;
+	margin: 0;
+	display: inline-block;
+}
+.classify a:hover{
+	background-color: #3399ff;
+	color: #fff;
+	display: grid;
+}
+.classify span{
+	font-size: 16px;
+	padding: 5px 10px;
+}
+a.act-c,a.act-c:hover{
+	background-color: #3399ff;
+	color: #fff;
+	display: grid;
+}
+.c-item{
+	height: 200px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #a4a1a1;}
+.line{
+
+}
+.c-item a{
+	text-decoration: none;
+}
+.ci-img{
+	width: 100%;
+}
+.rb{
+	margin-top: 5px;
+	text-align: right;
+}
+.he-item{
+	margin-bottom: 20px;
+}
+.he-item img{
+	width: 60px;
+	height: 50px;
+}
+/**************************topic***************************/
+.topic{
+	min-height: 500px;
+	background-color: #eee;
+	padding: 10px;
+}
+.tc3{
+	text-align: center;
+}
+img.man-pic{
+	width: 140px;
+	height: 140px;
+	margin: 10px auto;
+}
+.lname span{
+	font-size: 16px;
+	font-weight: bold;
+}
+.tcontent{
+	text-indent:2em;
+	margin-bottom: 100px;
+}
+textarea{
+	resize: none;
+	margin-bottom: 20px;
+}
+.doComment{
+	padding: 10px;
+	background-color: #eee;
+}
+.bbs-img{
+	width: 150px;
+}
+.lc{
+	margin-left: 10px;
+}
+.lc h3{
+	margin-top: 50px;
+}
+.lbtn{
+	margin-left: 20px;
+}
+.lbtn button{
+	margin-top: 20px;
+	padding: 10px 30px;
+	font-size: 20px;
+}
+.bbs-t{
+	background-color: #eee;
+}

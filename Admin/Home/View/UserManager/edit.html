@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理界面</title>
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/bootstrap.min.css">
+	<link rel="stylesheet" href="__PUBLIC__/Admin/css/page.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .form-horizontal{
+            margin-left: 280px;
+            margin-top: 40px;
+        }
+        .anniu{
+            margin-top: 40px;
+            margin-left: 270px;
+        }
+        header{
+            width: 1150px;
+            text-align: center;
+        }
+        .left-line, .right-line{
+            width: 350px;
+            border:.5px solid #555555;
+            display: inline-block;
+            position: relative;
+            bottom: 8px;
+        }		
+        header{
+            width: 1150px;
+            text-align: center;
+        }
+        .left-line, .right-line{
+            width: 350px;
+            border:.5px solid #555555;
+            display: inline-block;
+            position: relative;
+            bottom: 8px;
+        }
+        table thead tr th {
+            text-align: center;
+        }
+		.pagination {
+			line-height:30px;
+		}
+    </style>
+</head>
+<body>
+<header>
+    <!-- 左横线  -->
+    <div class="left-line"></div>
+    <h1 style="display: inline; margin:0 60px;font-family: 'microsoft yahei'; font-weight: bold;" > 用户管理</h1>
+    <!-- 右横线 -->
+    <div class="right-line"></div>
+</header>
+<form class="form-horizontal" action="{:U('update')}" method="post" role="form" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="firstname" class="col-sm-2 control-label">用户名</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="user_name" name="user_name" value="{$web_config_list.title|default=''}" style="width:270px;">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastname" class="col-sm-2 control-label">手机号</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="phone" name="phone" value="{$web_config_list.subtitle|default=''}" style="width:270px;">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="icp" class="col-sm-2 control-label">邮&nbsp;&nbsp;箱 </label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="email" name="email" value="{$web_config_list.icp|default=''}" style="width:270px;">
+        </div>
+    </div>
+    <div class="anniu">
+    	<input type="hidden" name="id" value="{$web_config_list.id|default=''}">
+        <button class="btn btn-primary "  type="submit" id="submit" target-form="form-horizontal">提交</button>
+	</div>
+</form>
+<script src='__PUBLIC__/Admin/js/jquery-1.7.2.min.js'></script>
+<script src="__PUBLIC__/Admin/js/bootstrap.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>

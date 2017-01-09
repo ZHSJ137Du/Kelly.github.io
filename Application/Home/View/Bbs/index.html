@@ -1,0 +1,221 @@
+<extend name="Public:layout" />
+<block name="main-content">
+	<div class="main container">
+		<div class="row m">
+			<div class="col-lg-8 col-md-8 col-sm-8 bbs">
+				<div class="s-title">
+					<a href="__APP__/bbs" class="active">
+						全部社区
+					</a>
+					<a href="__APP__/topic" >
+						最热话题
+					</a>
+				</div>
+				<div class="all">
+					<div class="row sub">
+						<volist name="community" id="c">
+							<div class="col-lg-4 col-md-4 col-sm-4 ">
+								<div class="a-item">
+									<a href="__APP__/topic/topicList/id/{$c.id}">
+										<img src="__PUBLIC__/home/{$c.comm_icon}" alt="" class="left ai-img">
+										<div class="a-m left">
+											<h5>{$c.comm_name}</h5>
+											<span class="glyphicon glyphicon-user"></span>80
+											<span class="glyphicon glyphicon-comment"></span>80
+										</div>
+										<div class="clearboth"></div>
+									</a>
+								</div>
+							</div>
+						</volist>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<div class="a-item">
+								<a href="#">
+									<img src="__PUBLIC__/home/images/1.jpg" alt="" class="left ai-img">
+									<div class="a-m left">
+										<h5>半夜三根ken甘蔗</h5>
+										<span class="glyphicon glyphicon-user"></span>80
+										<span class="glyphicon glyphicon-comment"></span>80
+									</div>
+									<div class="clearboth"></div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<div class="a-item">
+								<a href="#">
+									<img src="__PUBLIC__/home/images/1.jpg" alt="" class="left ai-img">
+									<div class="a-m left">
+										<h5>半夜三根干嘛</h5>
+										<span class="glyphicon glyphicon-user"></span>80
+										<span class="glyphicon glyphicon-comment"></span>80
+									</div>
+									<div class="clearboth"></div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<div class="a-item">
+								<a href="#">
+									<img src="__PUBLIC__/home/images/1.jpg" alt="" class="left ai-img">
+									<div class="a-m left">
+										<h5>半夜三根敲代码</h5>
+										<span class="glyphicon glyphicon-user"></span>80
+										<span class="glyphicon glyphicon-comment"></span>80
+									</div>
+									<div class="clearboth"></div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<div class="a-item">
+								<a href="#">
+									<img src="__PUBLIC__/home/images/1.jpg" alt="" class="left ai-img">
+									<div class="a-m left">
+										<h5>半夜三根敲代码</h5>
+										<span class="glyphicon glyphicon-user"></span>80
+										<span class="glyphicon glyphicon-comment"></span>80
+									</div>
+									<div class="clearboth"></div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<div class="a-item">
+								<a href="#">
+									<img src="__PUBLIC__/home/images/1.jpg" alt="" class="left ai-img">
+									<div class="a-m left">
+										<h5>半夜三根敲代码</h5>
+										<span class="glyphicon glyphicon-user"></span>80
+										<span class="glyphicon glyphicon-comment"></span>80
+									</div>
+									<div class="clearboth"></div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<div class="a-item">
+								<a href="#">
+									<img src="__PUBLIC__/home/images/1.jpg" alt="" class="left ai-img">
+									<div class="a-m left">
+										<h5>半夜三根敲代码</h5>
+										<span class="glyphicon glyphicon-user"></span>80
+										<span class="glyphicon glyphicon-comment"></span>80
+									</div>
+									<div class="clearboth"></div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="page">
+						<!--<nav>
+							<ul class="pagination">
+								<li ><a href="#">&laquo;</a></li>
+							    <li class="active"><a href="#">1</a></li>
+							    <li><a href="#">2</a></li>
+							    <li><a href="#">3</a></li>
+							    <li><a href="#">4</a></li>
+							    <li><a href="#">5</a></li>
+							    <li><a href="#">&raquo;</a></li>
+							</ul>
+						</nav>-->
+						{$page}
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4">
+				<h3>热门社区</h3>
+				<div class="litem">
+					<volist name="hotBbs" id="hb">
+						<div class="item4">
+							<div class="i-img left">
+								<img src="__PUBLIC__/home/images/1.jpg" alt="">
+							</div>
+							<div class="i-m left">
+								<a href="__APP__/Topic/topicList/id/{$hb.id}" class="t-a">{$hb.comm_name}</a><br>
+								<small>{$hb.comm_info}</small>
+								<div class="im-o">
+									<span class="glyphicon glyphicon-user"></span>80
+									<span class="glyphicon glyphicon-comment"></span>80
+								</div>
+							</div>
+							<div class="clearboth"></div>
+						</div>
+					</volist>
+					<div class="item4">
+						<div class="i-img left">
+							<img src="__PUBLIC__/home/images/1.jpg" alt="">
+						</div>
+						<div class="i-m left">
+							<a href="" class="t-a">半夜三根ken甘蔗</a><br>
+							<small>这里是简介。。。。</small>
+							<div class="im-o">
+								<span class="glyphicon glyphicon-user"></span>80
+								<span class="glyphicon glyphicon-comment"></span>80
+							</div>
+						</div>
+						<div class="clearboth"></div>
+					</div>
+					<div class="item4">
+						<div class="i-img left">
+							<img src="__PUBLIC__/home/images/1.jpg" alt="">
+						</div>
+						<div class="i-m left">
+							<a href="" class="t-a">半夜三根干嘛</a><br>
+							<small>这里是简介。。。。</small>
+							<div class="im-o">
+								<span class="glyphicon glyphicon-user"></span>80
+								<span class="glyphicon glyphicon-comment"></span>80
+							</div>
+						</div>
+						<div class="clearboth"></div>
+					</div>
+					<div class="item4">
+						<div class="i-img left">
+							<img src="__PUBLIC__/home/images/1.jpg" alt="">
+						</div>
+						<div class="i-m left">
+							<a href="" class="t-a">半夜三根敲代码</a><br>
+							<small>这里是简介。。。。</small>
+							<div class="im-o">
+								<span class="glyphicon glyphicon-user"></span>80
+								<span class="glyphicon glyphicon-comment"></span>80
+							</div>
+						</div>
+						<div class="clearboth"></div>
+					</div>
+					
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<script>
+		$(function(){
+			$('.a-join').each(function(index, el) {
+				$(this).click(function(event) {
+					/* Act on the event */
+					var id = $(this).data("id");
+					var data = {id:id};
+					var url = '__APP__/Bbs/joinComunity';
+					post(data,url);
+				});
+			});
+			function post(data,url){
+				$.ajax({
+					url:url,
+					type:'POST',
+					dataType:'json',
+					data:data,
+					successs:function(m){
+						if (m.status==1) {
+							alert(m.msg);
+						}else{
+							alert("失败");
+						}
+					}
+				})
+			}
+		})
+	</script>
+</block>

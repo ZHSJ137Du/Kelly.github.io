@@ -1,0 +1,61 @@
+<extend name="Public:layout" />
+<block name="main-content">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12 pt8"> 
+			<div class="ctitle">课程管理  
+			<button class="btn btn-success ml8" onclick="javascript:link('__APP__/Course/add');">添加</button>
+			<button class='btn btn-info ml8' onclick="javascript:tabreload()" >刷新</button> 
+			 
+			</div>
+			<div class="table-responsive mt20">
+				<table class="table table-hover table-bordered">
+					 <tr class="active">
+					 	<th>操作</th>
+						<th>课程名称</th>
+						<th>课程信息</th>
+						<th>课程类型</th>
+						<th>创建人</th>
+						<th>创建时间</th>
+						<th>状态</th>
+					 </tr>
+					 <volist name="list" id="v">
+					 	<tr id="tr_{$v['id']}"> 
+					 		<td class="w80"><button class="btn btn-success ml8" onclick="javascript:link('__APP__/Course/edit/id/{$v['id']}');">修改</button>
+					 		<button class="btn btn-success ml8" id={$v['id']} onclick="bn_del({$v['id']})">删除</button>
+							</td>
+					 		<td>{$v['course_name']}</td>
+					 		<td>{$v['course_info']}</td>
+					 		<td>{$v['tname']}</td>
+					 		<td>{$v['man']}</td>
+					 		<td>{$v['create_time']}</td>
+					 		<td>
+					 			{$v['status']==1 ? "<span class='spang1'>正常</span>":"<span class='spang0'>已暂停</span>"}
+					 		</td>
+					 		 
+					 	</tr> 
+					</volist>
+				</table>
+				<div class="page">{$page}</div>
+			</div>
+		</div>
+	</div>
+</div>
+<input type="hidden" id="acurl" value="">
+<script type="text/javascript">
+function bn_del(id){
+	$.ajax({
+		url:'__APP__/Course/del',
+		type:'POST',
+		dataType:'json',
+		data:{id:id},
+		success:function(m){
+			if (m.status) {
+				$("#tr_"+id).remove();
+			}
+			alert(m.msg);
+		}
+	})
+}
+</script>
+</block>

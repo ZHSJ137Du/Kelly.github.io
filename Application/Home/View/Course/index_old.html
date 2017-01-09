@@ -1,0 +1,138 @@
+<extend name="Public:index" />
+<block name="community">
+  <!DOCTYPE html>
+  <!-- saved from url=(0042)http://www.bslxx.com/edu/course/me/collect -->
+  <html lang="zh-CN">
+    
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/bootstrap-3.3.0/css/bootstrap-responsive.min.css">  
+      <style type="text/css"> 
+        .setposition{ margin-left: 5%; }
+        .menu_box{    height: 100%; line-height: 45px; }  
+        #test{ : 0; }
+        .second_head_box{height: 45px;background-color:#ececec;}
+            /*.setting_box{background-color:#ccc;}*/
+        .second_head_box1{height: 45px;background-color:#ffffff;}
+        .nav_box li{float: left; display: inline;width: 90px;text-align: center;}
+        .nav_box li a{ color: #333;font-size: 18px; padding: 10px;}
+        .nav_box li:hover{background-color: #fff;}
+        .nav_box li a:hover{color: #0aac87 !important}
+        .set_newnavbox li{ background-color: #aaaaaa; line-height: 3em; }
+        .set_newnavbox li a{ color: #000000; }
+        .set_newnavbox .active1{ background-color: #00876b; }
+        .set_newnavbox .active1 a{ color: #ffffff; }
+        .set_newnavbox li:hover{background-color: #00876b;}
+        .set_newnavbox li a:hover{color: #ffffff !important}
+
+        .active{background-color: #fff;height: 45px}
+        .active a{color: #0aac87 !important}
+        .setting_box li{float: left;}
+        .setting_box li a{padding: 0 5px}
+        li{list-style: none;}
+        .menu_two_box{    height: 100%;  line-height: 45px;}
+            /*如果给盒子，ie下面的外边距会多15像素*/
+        .colsum { width: 65%; }
+        .table>tbody>tr{margin-top: 10px; }
+        .table>tbody>.tr_settop>td{ border-top: 0;}
+        .table>tbody>tr>.td_settop{color:#0aac87;}
+
+        .table>tbody>tr>td>a{ color: #000000; }
+        .table>tbody>tr>.td_active>a{ color:#00876b; }
+      </style>
+    </head>    
+    <body>
+    <div class="setposition">
+      <!-- kind begin -->
+      <div class="row">
+        <h1>课程一览表</h1>
+        <table class="table">
+          <tr>
+            <td class="td_settop">大类</td>
+            <td class="td_active"><a href="#">全部</a></td>
+            <td><a href="#">创新创业</a></td>
+            <td><a href="#">生活与化学</a></td>
+            <td class="colsum"></td>          
+          </tr>
+          <tr class="tr_settop">
+            <td class="td_settop">小类</td>
+            <td class="td_active"><a href="#">全部</a></td>
+            <td></td>
+            <td></td>
+            <td class="colsum"></td>          
+          </tr>       
+        </table>
+      </div>
+      <div class="row">
+        <div class="row second_head_box1">
+          <!-- 栅格化12个格子 -->
+          <div class="col-md-9 menu_box" >
+            <ul class="nav_box set_newnavbox">
+              <li class="active1">
+                <a href="#">人气</a>
+              </li>
+              <li>
+                <a href="#">价格</a>
+              </li>
+              <li>
+                <a href="#">最新</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <br/>
+      <hr>
+      <!-- kind end -->
+      <!-- course list begin -->
+      <div class="row">
+        <div id="yw4" class="list-view">
+          <div class="items">
+            <div class="row" style="margin-top:50px">
+              <div class="span12">                
+                <div id="yw5" class="list-view">
+                  <div class="items">
+                    <ul class="thumbnails">
+					<foreach name="courses" item="course">
+                      <li class="span3" courseid="{$course.id}">
+                        <div class="course-card">
+                          <a href="__APP__/course/courseDetail/id/{$course.id}">
+                            <img style="width: 270px;height:200px;" class="hidden-phone" src="__PUBLIC__/Home/images/{$course.course_icon}" alt="image" />
+                          </a>
+                          <div style="border:1px solid #eee;">
+                            <a style="display:block;color:#333;font-size:18px;   text-align: left;line-height: 28px;padding: 25px 25px 0 25px;" href="__APP__/course/courseDetail/id/{$course.id}">{$course.course_name}
+                            </a>
+                            <div style="padding:18px 25px">
+                              <div class="pull-left">
+                                <strong class="orange-color">干货值：{$course.click_num}斤</strong>
+                              </div>
+                              <div class="pull-right muted">已有{$course.course_info}同学
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                     </foreach>                  
+                    </ul>
+                  </div>
+                  <div class="keys" style="display:none" title="#">
+                    <span>72</span>
+                    <span>71</span>
+                    <span>70</span>
+                    <span>67</span>
+                    <span>58</span>
+                    <span>56</span>
+                    <span>52</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+          </div>  
+        </div>
+      </div>
+      <!-- course list end -->    
+    </div>
+    </body>  
+  </html>
+</block>

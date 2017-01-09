@@ -1,0 +1,42 @@
+<extend name="Public:layout" />
+<block name="main-content">
+<div class="container-fluid" >
+	<form action="{:U('Course/update')}" enctype="multipart/form-data" method="post">
+
+	<div class="form-group">
+		<label for="course_name" class="col-sm-2 col-lg-2 control-label">课程名称：</label>
+		<input required type="text" name="course_name" id="course_name" value="{$info['course_name']}" class="form-control">
+	</div>
+	<!--<div class="form-group">
+	 一个表单传输文件的？ -->
+		<!-- 缩略图： 
+		<input class="dropify" type="file" name="thumb">
+	</div> -->
+	<div class="form-group"> 
+		 <label for="course_info" class="col-sm-2 col-lg-2 control-label">课程信息: </label>
+		 <textarea name="course_info" id="course_info" class="form-control">{$info['course_info']}</textarea>
+	</div>
+	<div class="form-group">
+		<label for="type_id" class="col-sm-2 col-lg-2 control-label">课程类型:</label>
+		<select name="type_id" id="type_id" value="{$info['type_id']}" class="form-control">
+		<volist name="courseType" id="vo">
+  			<option value ={$key} <if condition="($key eq $info['type_id'])"> selected
+</if>>{$vo}</option>  
+		</volist>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="video_url" class="col-sm-2 col-lg-2 control-label">视频地址：</label>
+		<textarea name="video_url" id="video_url" class="form-control">{$info['video_url']}</textarea>
+	</div>
+	
+	<div class="form-group">
+	<input type="hidden" name="id" value="{$info['id']}">
+	<label for="edit" class="col-sm-2 col-lg-2 control-label"></label>
+	<input type="submit" id="edit" class="btn btn-success" value="修改">
+	</div>
+
+</form>
+</div>
+
+</block>

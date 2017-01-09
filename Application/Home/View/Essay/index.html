@@ -1,0 +1,180 @@
+<extend name="Public:layout" />
+<block name="main-content">
+	<div class="main container">
+		<div class="row ">
+			<div class="col-lg-9 col-md-9 col-sm-9 essay">
+				<!--左边内容-->
+				<div class="classify">
+					<a href="__APP__/essay/index/" class="{$act=='all' ? 'act-c':''}"><span>全部</span></a>
+					<a href="__APP__/essay/index/cid/1" class="{$act=='1' ? 'act-c':''}"><span>技术与创新</span></a>
+					<a href="__APP__/essay/index/cid/2" class="{$act=='2' ? 'act-c':''}"><span>生活与艺术</span></a>
+					<a href="__APP__/essay/index/cid/3" class="{$act=='3' ? 'act-c':''}"><span>天才与秀逗</span></a>
+					<a href="__APP__/essay/index/cid/4" class="{$act=='4' ? 'act-c':''}"><span>随便说说</span></a>
+				</div>
+				<div class="cm ">
+					<volist name="essay" id="e">
+						<div class="c-item row">
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<!--右边边内容-->
+								<img src="__PUBLIC__{$e.img}" alt="" class="ci-img">
+							</div>
+							<div class="col-lg-8 col-md-8 col-sm-8">
+								<h4><a href="__APP__/essay/show/id/{$e.id}">{$e.article_title}——<small>这是人名</small></a></h4>
+								<p>{$e.article_content|htmlspecialchars|strip_tags|substr=0,24}....<small>more</small></p>
+								<div class="rb">
+									<span class="date">{$e.create_time}</span>
+									<span class="glyphicon glyphicon-eye-open"></span><span>{$e.click_num}</span>
+								</div>
+							</div>
+						</div>
+					</volist>
+					<div class="c-item row">
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<!--右边边内容-->
+							<img src="__PUBLIC__/home/images/1.jpg" alt="" class="ci-img">
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-8">
+							<h4><a href="">艺术来源于生活高于生活——<small>这是人名</small></a></h4>
+							<p>艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活....<small>more</small></p>
+							<div class="rb">
+								<span class="date">2016-12-25</span>
+								<span class="glyphicon glyphicon-eye-open"></span><span>14</span>
+							</div>
+						</div>
+					</div>
+					<div class="c-item row">
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<!--右边边内容-->
+							<img src="__PUBLIC__/home/images/1.jpg" alt="" class="ci-img">
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-8">
+							<h4><a href="">艺术来源于生活高于生活——<small>这是人名</small></a></h4>
+							<p>艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活....<small>more</small></p>
+							<div class="rb">
+								<span class="date">2016-12-25</span>
+								<span class="glyphicon glyphicon-eye-open"></span><span>14</span>
+							</div>
+						</div>
+					</div>
+					<div class="c-item row">
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<!--右边边内容-->
+							<img src="__PUBLIC__/home/images/1.jpg" alt="" class="ci-img">
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-8">
+							<h4><a href="">艺术来源于生活高于生活——<small>这是人名</small></a></h4>
+							<p>艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活....<small>more</small></p>
+							<div class="rb">
+								<span class="date">2016-12-25</span>
+								<span class="glyphicon glyphicon-eye-open"></span><span>14</span>
+							</div>
+						</div>
+					</div>
+					<div class="c-item row">
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<!--右边边内容-->
+							<img src="__PUBLIC__/home/images/1.jpg" alt="" class="ci-img">
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-8">
+							<h4><a href="">艺术来源于生活高于生活——<small>这是人名</small></a></h4>
+							<p>艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活....<small>more</small></p>
+							<div class="rb">
+								<span class="date">2016-12-25</span>
+								<span class="glyphicon glyphicon-eye-open"></span><span>14</span>
+							</div>
+						</div>
+					</div>
+					<div class="c-item row">
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<!--右边边内容-->
+							<img src="__PUBLIC__/home/images/1.jpg" alt="" class="ci-img">
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-8">
+							<h4><a href="">艺术来源于生活高于生活——<small>这是人名</small></a></h4>
+							<p>艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活艺术来源于生活高于生活....<small>more</small></p>
+							<div class="rb">
+								<span class="date">2016-12-25</span>
+								<span class="glyphicon glyphicon-eye-open"></span><span>14</span>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="page">
+						<!--<nav>
+							<ul class="pagination">
+								<li ><a href="#">&laquo;</a></li>
+							    <li class="active"><a href="#">1</a></li>
+							    <li><a href="#">2</a></li>
+							    <li><a href="#">3</a></li>
+							    <li><a href="#">4</a></li>
+							    <li><a href="#">5</a></li>
+							    <li><a href="#">&raquo;</a></li>
+							</ul>
+						</nav>-->
+						{$page}
+					</div>
+			</div>
+			
+			<div class="col-lg-3 col-md-3 col-sm-3">
+				<div class="hot-essay">
+					<h4>热点文章</h4>
+					<div class="he ">
+						<volist name="hoteassy" id="he">
+						<div class="he-item row">
+							<div class="col-lg-3 col-md-3 col-sm-3">
+								<img src="{$he.img}" alt="">
+							</div>
+							<div class="col-lg-9 col-md-9 col-sm-9">
+								<a href="__APP__/essay/show/id/{$he.id}">{$he.article_title}</a>
+								<div class="rb">
+									<span class="date">{$he.create_time}</span>
+									<span class="glyphicon glyphicon-eye-open"></span><span>{$he.click_num}</span>
+								</div>
+							</div>
+						</div>
+						</volist>
+						<div class="he-item row">
+							<div class="col-lg-3 col-md-3 col-sm-3">
+								<img src="__PUBLIC__/home/images/1.jpg" alt="">
+							</div>
+							<div class="col-lg-9 col-md-9 col-sm-9">
+								<a href="">世界和你</a>
+								<div class="rb">
+									<span class="date">2016-12-25</span>
+									<span class="glyphicon glyphicon-eye-open"></span><span>14</span>
+								</div>
+							</div>
+						</div>
+						<div class="he-item row">
+							<div class="col-lg-3 col-md-3 col-sm-3">
+								<img src="__PUBLIC__/home/images/1.jpg" alt="">
+							</div>
+							<div class="col-lg-9 col-md-9 col-sm-9">
+								<a href="">芝麻与绿豆，还有糖</a>
+								<div class="rb">
+									<span class="date">2016-12-25</span>
+									<span class="glyphicon glyphicon-eye-open"></span><span>14</span>
+								</div>
+							</div>
+						</div>
+						<div class="he-item row">
+							<div class="col-lg-3 col-md-3 col-sm-3">
+								<img src="__PUBLIC__/home/images/1.jpg" alt="">
+							</div>
+							<div class="col-lg-9 col-md-9 col-sm-9">
+								<a href="">芝麻与绿豆，还有糖</a>
+								<div class="rb">
+									<span class="date">2016-12-25</span>
+									<span class="glyphicon glyphicon-eye-open"></span><span>14</span>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</block>

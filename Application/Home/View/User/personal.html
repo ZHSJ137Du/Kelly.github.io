@@ -1,0 +1,147 @@
+<extend name="Public:index" />
+<block name="personal">
+<!-- Author: 莫文诺 -->
+<!-- Date:2017-1-7 -->
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/bootstrap-3.3.0/css/bootstrap-responsive.min.css">
+<body>
+<div style="padding:0 5px">
+<div class="container dxd-container">
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+}
+#personal{
+	width:100%;
+	background:#EFEFEF;
+}
+#personal > div:first-of-type{
+	height:120px;
+	background:#DEE7D6;
+}
+#personal > div:first-of-type img:first-of-type{
+	float:left;
+	width:75px;
+	height:75px;
+	margin-left:380px;
+	margin-top:20px;
+}
+#personal > div:first-of-type > div:nth-of-type(3) img{
+	width:20px;
+	height:20px;
+	float:left;
+	margin-left:10px;
+	margin-top:45px;
+}
+#personal > div:first-of-type b{
+	float:left;
+	margin-top:40px;
+	margin-left:20px;
+	font-size:20px;
+}
+
+#personal > div:nth-of-type(2){
+	width:100%;
+	height:400px;
+	margin:0 auto;
+	margin-top:15px;
+	background:#ffffff;
+	border:1px solid #ccc;
+}
+#personal > div:nth-of-type(2) > div:first-of-type > a:first-of-type{
+	margin-right:20px;
+}
+#personal > div:nth-of-type(2) > div:first-of-type > a{
+	float:right;
+	color:#9C9C9C;
+	margin-left:40px;
+	margin-top:15px;
+}
+#personal > div:nth-of-type(2) > div:first-of-type > a:hover{
+	color:#10AD5A;
+	text-decoration:underline;
+}
+
+#personal > div:nth-of-type(2) > div:nth-of-type(2) > div{
+	margin-top:40px;
+	margin-left:30px;
+
+}
+#personal > div:nth-of-type(2) > div:nth-of-type(2) > div span:nth-of-type(2){
+	margin-left:20px;
+	font-size:15px;
+
+}
+#personal > div:nth-of-type(2) > div:nth-of-type(2) > div span:first-of-type{
+	color:#CECECE;
+
+}
+
+
+</style>
+<div id="personal">
+	<div>
+		<div>
+			 <if condition="$_SESSION.pic eq null">
+				<img src="__PUBLIC__/Home/Upload/{$data.user_icon}"> 
+			  <else />
+				<img src="__PUBLIC__/Home/Upload/{$_SESSION.pic}">
+			</if>
+		</div>
+		<div>
+			<!--<b>{$_SESSION.username}</b>-->
+		</div>
+		
+	</div>
+	<div>
+		<div>
+			<a href="__CONTROLLER__/index/id/{$_SESSION.id}">编辑我的资料</a>
+			<a href="__APP__/Index/index">前往首页</a>
+		</div>
+		<div>
+			<div>
+				<span>用户名:</span><span>{$data.user_name}</span><br/>
+			</div>
+			
+			<div>
+				<span>手机:</span><span>{$data.phone}</span><br/>
+			</div>
+			<div>
+				<span>电子邮箱:</span><span>{$data.email}</span><br/>
+			</div>
+			<div>
+				<span>擅长:</span><span>{$data.power}</span><br/>
+			</div>
+		</div>
+	</div>
+</div>
+</div></div>
+
+<div id="yw1" class="list-view">
+<div class="items">
+
+
+
+</body></html>
+
+
+
+
+
+</block>
+
+
+
+
+
+
+
+
+
+
+
+
+

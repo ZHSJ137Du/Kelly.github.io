@@ -1,0 +1,104 @@
+<extend name="Public:index" />
+<block name="user">
+<!-- Author: 张芳 -->
+<!-- Date:2017-1-7 -->
+<html lang="zh-CN"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/bootstrap-3.3.0/css/bootstrap-responsive.min.css">
+<script src="__PUBLIC__/Home/js/hm.js"></script>
+<script type="text/javascript" src="<c:url value='/home/js/jquery-3.1.1.min.js'/>"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/bootstrap.js"></script>
+<title>用户设置</title>
+<script type="text/javascript" src="__PUBLIC__/Home/js/function.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/Validform_v5.3.2_min.js"></script>
+</head>
+</head>
+<body>
+<ul class="flashes" style="opacity: 1; display: none;">
+  <li><div class="flash-success">保存信息成功！</div></li>
+</ul>
+ 
+<div style="padding:0 5px;margin-bottom:200px;">
+ 
+<div class="container dxd-container">
+<div class="row">
+
+<div class="span2 ">
+<div style="border-right:1px solid #ccc;padding-bottom:20px;">
+<div style="padding:20px;">
+<div class="dxd-user-face center">
+<img class="dxd-user-face-large center" style="width:130px;height:130px;display:block;"src="__PUBLIC__/Home/Upload/{$data.user_icon}"  alt="{$_SESSION.user_name}">
+ </div>
+<div style="text-align: center;font-size:1.6em;padding-top:10px;;">{$_SESSION.user_name}</div>
+</div>
+<!--<ul id="yw0" class="nav nav-list"><li><a href="/edu/notice/index"><i class="icon-bell"></i> 提醒</a></li><li><a href="/edu/message/index"><i class="icon-envelope"></i> 私信</a></li><li class="active"><a href="/edu/me/setBasic"><i class="icon-cog"></i> 设置</a></li></ul>--></div>
+</div>
+
+<div class="span10">
+<h3 class="side-lined">账号设置</h3>
+<div class="span4 center">
+<div class="form">
+<form method="post" action="__CONTROLLER__/mol" enctype="multipart/form-data" id="userForm" >
+<input type="hidden" name="id" value="{$_SESSION.id}"/>
+<div class="row"><em class="f-sign" style="float:left;margin-left:4px;margin-top:-1px;">必*填</em>
+<label for="UserInfo_name">用户名</label> <input size="60" maxlength="20" class="input-block-level" class="j-input" datatype="*" placeholder="强烈推荐使用真实姓名" name="user_name" id="user_name" value="{$data.user_name}" ></div>
+<div class="row">
+<label for="UserInfo_bio">手机</label> 
+ 
+                            <label class="j-hint inputhint" for="inputtxt" id="auto-id-1449497480854"></label>
+<input size="60" maxlength="200" class="input-block-level" datatype="*"  name="phone" id="phone" type="text" value="{$data.phone}"> </div>
+<div class="row">
+<label for="UserInfo_introduction">电子邮箱</label> 
+<input size="60" maxlength="200" class="input-block-level" datatype="e" name="email" id="email" type="text" value="{$data.email}"> </div>
+<div class="row">
+<label for="UserInfo_introduction">修改头像</label> 
+						<div class="j-pic eBcon auto-1449497480797-parent">
+							<div class="f-cb auto-1449497480797">
+								<div style="float:left;margin-top:4px;">
+									<input type="file" name="pic" />
+								</div>
+							</div>
+						</div>
+			</div>
+<div class="row">
+<label for="UserInfo_introduction">擅长</label> 
+<input size="60" maxlength="200" class="input-block-level" name="power" id="power" type="text" value="{$data.power}"> </div>
+
+</div>
+<div class="row buttons" style="margin-top:15px">
+
+<button class="btn-block btn btn-success" type="submit" name="yt0">保存</button> </div>
+</form>
+</div> 
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+</div> 
+</div>
+ 
+<div class="clearfix"></div>
+
+
+
+</body></html>
+<script type="text/javascript">
+
+$(document)
+			.ready(
+					function() {
+						
+
+						$("#userForm").Validform({
+							tiptype : 3
+						});
+						
+							
+
+						
+						
+					});
+
+</script>
+</block>

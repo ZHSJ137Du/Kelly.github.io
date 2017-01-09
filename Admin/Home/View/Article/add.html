@@ -1,0 +1,118 @@
+<!DCOTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>添加文章</title>
+	<!-- 使用bootstrap 和jquery -->
+	<link rel="stylesheet" href="__PUBLIC__/Admin/libs/bootstrap-3.3.0/css/bootstrap.min.css"  />
+
+	<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.1.11.1.min.js"></script>
+	<script type="text/javascript" scr="__PIUBLIC__/Admin/libs/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+
+<style>
+table{margin-top: 20px;}
+td{padding-left: 10px;}
+tr{height: 40px;  }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">后台</a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav">
+            <li><a href="#">课程</a></li>
+            <li><a href="{:U('/community')}">社区</a></li>
+            <li class="active"><a href="{:U('index')}">文章</a></li>
+            <li><a href="#">用户</a></li>
+            <li><a href="#">设置</a></li>
+        </ul>
+    </div>
+    </div>
+</nav>
+<div class="container">
+	<div class="col-md-2" style="margin-top:30px; height:100%; border-right:1px solid #ccc;">
+		<div style="margin-top:30px;">
+			<!-- U方法是Url，这条语句里表示载入ArticleType控制器中的index对应的地址 -->
+			<a href="{:U('/ArticleType/index')}">文章类型管理</a>
+		</div>
+		<div>
+			<!-- 使用当前控制器(Article)的index地址 -->
+			<a href="{:U('index')}">文章管理</a>
+		</div>
+	</div>
+	<div class="col-md-10">
+		<h1 style="text-align:center;">添加文章</h1>
+		<!-- 使用当前控制器的save的地址 -->
+		<form action="{:U('save')}" method="post" enctype="multipart/form-data">
+			<table>
+				<tr>
+					<td>
+						标题:
+					</td>
+					<td>
+						<input type="text" name="title">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						类型:
+					</td>
+					<td>
+						<input type="text" name="type">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						关键字:
+					</td>
+					<td>
+						<input type="text" name="keyword">
+					</td>
+				</tr>
+				<tr>
+					<td  colspan="2">
+						<div style="height: 210px; width: 210px; margin: 20px;">
+							<!-- 使用dropify -->
+							<input class="dropify" type="file" name="photo">
+						</div>
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div >
+						<!-- 百度编辑器预留 -->
+						<textarea name="content" id="content" ></textarea>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+						<input type="submit">
+						</div>
+					</td>
+				</tr>
+			</table>
+		</form>
+<!-- 载入dropify的CSS和JS -->
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/libs/dropify/dropify.min.css">
+		<script type="text/javascript" src="__PUBLIC__/Admin/libs/dropify/dropify.min.js"></script>
+		<script type="text/javascript">
+			$('.dropify').dropify();
+		</script>
+
+ 		<!-- 百度编辑器 -->
+ 		<script type="text/javascript" src="__PUBLIC__/Admin/libs/ueditor/ueditor.config.js"></script>
+
+ 		<script type="text/javascript" src="__PUBLIC__/Admin/libs/ueditor/ueditor.all.min.js"></script>
+
+ 		<script type="text/javascript">
+		//百度编辑器设置,初始高度为300px
+ 	 		var ue = UE.getEditor('content',{initialFrameHeight: 300});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<extend name="Public:index" />
+<block name="register">
+<!-- Author: 黄汉杰 -->
+<!-- Date:2017-1-7 -->
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>注册页面</title>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/bootstrap-3.3.0/css/bootstrap-responsive.min.css">
+      <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.js"></script>
+      <script type="text/javascript" src="__PUBLIC__/Home/js/Validform_v5.3.2_min.js"></script>
+      <style>
+
+      </style>
+    </head>
+    
+    <body>
+    	<div class="container">
+		
+    		
+       	<div class="container dxd-container" style="width:300px;">
+          <div class="row ">
+		   <div class="span4 center ">
+                            <h2 style="text-align:center">欢迎您的到来！</h2>
+	          <div class="form">
+	            <form class="well span3.5" action="{:U('login/save_info')}" id="regForm">
+	              <div class="row success">
+	                <label for="LoginForm_username" class="required">用户名：
+	                  <span class="required">*</span></label>
+	                <input type="text" name="user_name" datatype="*"></div>
+	              <div class="row success">
+	                <label for="LoginForm_password" class="required">密码：
+	                  <span class="required">*</span></label>
+	                <input type="password" name="password" datatype="*6-30" plugin="passwordStrength" onchange="checkVaild()"></div>
+	              <div class="row success">
+	                <label for="LoginForm_password" class="required">再次确认密码：
+	                  <span class="required">*</span></label>
+	                <input type="password" name="password_two" datatype="*" recheck="password" value="" errormsg="您两次輸入的密碼不一致！" plugin="passwordStrength"></div>
+	              <div class="form-group">
+	                <input type="submit" class="btn btn-success" value="注册">
+	              </div>
+	            </form>
+				 </div>
+				  </div>
+	          </div>
+          </div>
+        </div>
+    </body>
+  
+  </html>
+  <script type="text/javascript">$(document).ready(function() {
+
+      $("#regForm").Validform({
+        tiptype: 3
+      });
+
+    });</script>
+</block>

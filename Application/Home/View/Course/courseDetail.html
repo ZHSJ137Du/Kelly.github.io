@@ -1,0 +1,63 @@
+<extend name="Public:index" />
+<block name="title">Course Detail</block>
+<block name="css_js">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/course_detail.css"> 
+</block>
+<block name="content">
+  <div class="container">
+    <!-- Course detail begin -->
+    <div class="f10">
+      <div class="f11"><img  style="width:350px; height:250px;" src="{$course_detail[0].course_icon}" /></div>
+      <div class="f12"> 
+        <h3>{$course_detail[0].course_name}</h3>
+              <center><button id="button">学生数 {$course_detail[0].student_num}人</button></center>
+       </div>
+       <div class="dxd-course-header-right pull-right" style="padding-right:15px;margin-top:30px;">
+          <if condition="$userCourse eq null">
+            <a class="a-join" id="{$courses.id}" style="margin-left:25px;padding-top:2px;" href="__APP__/collect/toggleCollect/id/{$courses.id}">收藏课程</a> 
+          <else />
+            <a class="a-join" id="{$courses.id}" style="margin-left:25px;padding-top:2px;" href="__APP__/collect/toggleCollect/id/{$courses.id}">取消收藏</a> 
+          </if>
+      </div>
+       <div class="clear"></div>
+    </div>
+    <div class="wrap">
+      <div class="l_box">
+        <div class="f20">
+            {$course_detail[0].course_info}
+        </div>
+        <div class="content">
+          <h3>课时列表</h3>
+            <ul>
+              <foreach name='id_content' item='content'>
+                <li><a href="#"><b>{$content.course_no}</b>{$content.title}</a><span>访问数：{$content.click_num}次</span></li>
+              </foreach>
+            </ul>
+        </div>
+        <div class="f30">
+        <h4 style="size:12px; line-height:40px;">找到自己的职业生涯：</h4>
+        {$id_content[0].title}
+        <embed src={$id_content[0].video_url} allowFullScreen="true" quality="high" width="480" height="350" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></div>
+        </div>
+        <div class="f40">
+        <h3>送货人</h3>
+            <ul>
+              <li><a href="#"><img  width="100%" src="__PUBLIC__/Home/images/pic1.jpg" /><span>名字</span><p>文字内容文字内容</p></a></li>
+              <li><a href="#"><img  width="100%" src="__PUBLIC__/Home/images/pic1.jpg" /><span>名字</span><p>文字内容文字内容</p></a></li>
+              <li><a href="#"><img  width="100%" src="__PUBLIC__/Home/images/pic1.jpg" /><span>名字</span><p>文字内容文字内容</p></a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <script src="__PUBLIC__/Home/js/jquery-ui.js"></script>
+    <script>
+    $( "#button" ).button();
+    $( "#button-icon" ).button({
+      icon: "ui-icon-gear",
+      showLabel: false
+    });
+    </script>
+    <!-- Course detail end -->
+  </div>
+</block>

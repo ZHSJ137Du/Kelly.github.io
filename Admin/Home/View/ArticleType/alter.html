@@ -1,0 +1,74 @@
+<!DCOTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>文章类型修改</title>
+	<link rel="stylesheet" href="__PUBLIC__/Admin/libs/bootstrap-3.3.0/css/bootstrap.min.css"  />
+	<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.1.11.1.min.js"></script>
+	<script type="text/javascript" scr="__PIUBLIC__/Admin/libs/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+
+<style>
+table{margin-top: 20px; text-align:center;}
+td{padding-left: 10px;}
+tr{height: 30px; border-bottom: 1px solid #ccc; }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">后台</a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav">
+            <li><a href="#">课程</a></li>
+            <li><a href="{:U('/community')}">社区</a></li>
+            <li class="active"><a href="{:U('index')}">文章</a></li>
+            <li><a href="#">用户</a></li>
+            <li><a href="#">设置</a></li>
+        </ul>
+    </div>
+    </div>
+</nav>
+<div class="container">
+	<div class="col-md-2" style="margin-top:30px; height:100%; border-right:1px solid #ccc;">
+		<div style="margin-top:30px;">
+			<a href="{:U('index')}">文章类型管理</a>
+		</div>
+		<div>
+			<a href="{:U('/Article/index')}">文章管理</a>
+		</div>
+	</div>
+	<div class="col-md-10">
+		<h1 style="text-align:center;">文章类型修改</h1>
+
+		<form method="post" action="{:U('update')}">
+			<table align="center">
+				<tr>
+					<td>
+						ID
+					</td>
+					<td>
+						文章类型名称
+					</td>
+				</tr>
+				<tr>
+					<td>
+						{$data.id}
+						<input type="hidden" value="{$data.id}" name="id">
+					</td>
+					<td>
+						<input type="text" value="{$data.type_name}" name="name">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit"> 
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>
+</body>
+</html>

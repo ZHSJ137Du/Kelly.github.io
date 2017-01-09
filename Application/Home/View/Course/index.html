@@ -1,0 +1,90 @@
+<extend name="Public:index" />
+<block name="title">Course List</block>
+<block name="css_js">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/course_style.css"> 
+</block>
+
+<block name="content">
+  <div class="container" >
+    <!-- kind begin -->
+    <div class="row">
+      <h1 style="margin-top: 20px;">课程一览表</h1>
+      <table class="table">
+        <tr>
+          <td class="td_settop">大类</td>
+          <td class="td_active"><a href="{:U('Course/index?nav=course&order=click_num&clear_session=1')}">全部</a></td>
+          <td><a href="{:U('Course/index?active=course&type_name=科技')}">科技创新</a></td>
+          <td><a href="{:U('Course/index?active=course&type_name=管理')}">管理学</a></td>
+          <td class="colsum"></td>          
+        </tr>
+        <tr class="tr_settop">
+          <td class="td_settop">小类</td>
+          <td class="td_active"><a href="#">全部</a></td>
+          <td></td>
+          <td></td>
+          <td class="colsum"></td>          
+        </tr>       
+      </table>
+    </div>
+    <div class="row">
+      <div class="row second_head_box1">
+        <!-- 栅格化12个格子 -->
+        <div class="col-md-9 menu_box" >
+          <ul class="nav_box set_newnavbox">
+            <li class="{$active1 =='click_num' ? 'active1':''}">
+              <a href="{:U('Course/index?active=course&order=click_num')}">人气</a>                             
+            </li>
+            <li class="{$active1 =='create_time' ? 'active1':''}">
+              <a href="{:U('Course/index?active=course&order=create_time')}">最新</a>
+            </li>
+            <li class="{$active1 =='student_num' ? 'active1':''}">
+              <a href="{:U('Course/index?active=course&order=student_num')}">推荐</a>
+            </li>
+          </ul>            
+        </div>
+      </div>
+    </div>
+    <br/>
+    <hr>    
+    <!-- kind end -->
+    <!-- course list begin -->
+    <div class="row">
+      <div class="span12">                
+        <div id="yw5" class="list-view">
+          <div class="items">
+            <ul class="thumbnails">
+              <foreach name='select' item='course'>
+                <li class="span3" courseid="#">
+                  <div class="course-card">
+                    <a href="__APP__/Course/courseDetail?id={$course.course_id}&active=course">
+                      <img style="width: 100%;height:200px;" class="hidden-phone" src={$course.course_icon} alt="image" />
+                    </a>
+                    <div style="border:1px solid #eee;">
+                      <a style="display:block;color:#333;font-size:18px;   text-align: left;line-height: 28px;padding: 25px 25px 0 25px;" href="__APP__/Course/courseDetail?id={$course.course_id}&active=course">{$course.course_name}
+                      </a>
+                      <div style="padding:18px 25px">
+                        <div class="pull-left">
+                          <strong class="orange-color">访问数：{$course.click_num}次</strong>
+                        </div>
+                        <div class="pull-right muted">已有&nbsp;{$course.student_num}&nbsp;同学
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </foreach>                                          
+            </ul>
+            <div class="pagination">
+        　　{$page}
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <!-- course list end -->   
+    <!-- changing color: newnavbox >active1 -->
+<!--     <input type="hidden" id = "getOrder" value="{$getOrder}">
+    <script type="text/javascript" src="__PUBLIC__/Home/js/course_index.js"></script> -->
+  </div>  
+</block>

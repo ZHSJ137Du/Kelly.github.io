@@ -1,0 +1,314 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="__PUBLIC__/Admin/css/adminStyle.css" rel="stylesheet" type="text/css" />
+
+    <title>后台管理系统</title>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/jquery1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(
+            function() {
+                $(".div2").click(
+                    function() {
+                        $(this).next("div").slideToggle("slow").siblings(
+                            ".div3:visible").slideUp("slow");
+                    });
+            });
+        function openurl(url) {
+            var rframe = parent.document.getElementById("rightFrame");
+            rframe.src = url;
+        }
+        $(function(argument) {
+            // body...
+            $(".a1").click(function (argument) {
+                /* body... */
+                $(this).siblings('.a1').removeClass('href');
+                $(this).addClass('href');
+            })
+        });
+    </script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 微软雅黑;
+            background-repeat: no-repea;
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #ffffff
+        }
+        .href{
+            background: #ECECEC;
+        }
+        .title {
+            float:left;
+            font-size: 20px;
+            margin:-11px 40px;
+            color: #000000;
+            font-height: 20px;
+        }
+
+        .kecheng{
+            float:left;
+            margin:-11px 20px;
+            font-size: 15px;
+            color: #000000;
+            font-height: 20px;
+        }
+
+        .xiaozu{
+            float:left;
+            margin:-11px 20px;
+            font-size: 15px;
+            color: #000000;
+            font-height: 20px;
+        }
+
+        .neirong{
+            float:left;
+            margin:-11px 20px;
+            font-size: 15px;
+            color: #000000;
+            font-height: 20px;
+        }
+
+        .xitong{
+            float:left;
+            margin:-11px 20px;
+            font-size: 15px;
+            color: #000000;
+            font-height: 20px;
+        }
+
+        .top2 {
+            position: absolute;
+            width: 100%;
+            height: 47px;
+            text-align: center;
+            color: #d2d2d2;
+            background-color: #d8d8d8
+        }
+
+        .left {
+            position: absolute;
+            left: 0px;
+            top: 80px;
+            width: 200px;
+            height: 85%;
+            color: #000000;
+            font-size: 20px;
+            text-align: center;
+            background-color: #ffffff
+        }
+
+        .right {
+            position: absolute;
+            left: 200px;
+            top:80px;
+            width: 85.2%;
+            height: 85%;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .end {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            color: #556B2F;
+            font-size: 17px;
+            font-height: 20px;
+            font-family: 楷体;
+            background-color: #C0C0C0
+        }
+
+        .div1 {
+            text-align: center;
+            width: 200px;
+            padding-top: 10px;
+        }
+
+        .div2 {
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+            font-size: 18px;
+            position: relative;
+            border-bottom: #ccc 0px dotted;
+        }
+
+        .wzsz{
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            left: 40px;
+            top: 10px;
+            background: url(__PUBLIC__/Admin/images/1.png);
+        }
+
+        .xtgx{
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            left: 40px;
+            top: 10px;
+            background: url(__PUBLIC__/Admin/images/2.png);
+        }
+
+        .yxsz{
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            left: 40px;
+            top: 10px;
+            background: url(__PUBLIC__/Admin/images/3.png);
+        }
+
+        .zfsz{
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            left: 40px;
+            top: 10px;
+            background: url(__PUBLIC__/Admin/images/4.png);
+        }
+
+        .ztsz{
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            left: 40px;
+            top: 10px;
+            background: url(__PUBLIC__/Admin/images/5.png);
+        }
+
+        .yhgl{
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            left: 40px;
+            top: 10px;
+            background: url(__PUBLIC__/Admin/images/6.png);
+        }
+
+        .div3 {
+            display: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .div3 ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div3 li {
+            height: 30px;
+            line-height: 30px;
+            list-style: none;
+            text-align: center;
+        }
+
+        .a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .a1 {
+            text-decoration: none;
+            color: #000000;
+            font-size: 18px;
+            display: block;
+        }
+
+        .title_gl{
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="top2">
+    <div class="title" >
+        <h3>后台管理系统</h3>
+    </div>
+    <div class="kecheng" >
+        <h5>课程</h5>
+    </div>
+    <div class="xiaozu" >
+        <h5>小组</h5>
+    </div>
+    <div class="neirong" >
+        <h5>内容</h5>
+    </div>
+    <div class="xitong" >
+        <h5>系统</h5>
+    </div>
+	    <div class="fr top-link">
+        <a href="{:U('Login/out')}" target="" title="DeathGhost"><i
+           class="adminIcon"></i><span>退出</span></a>
+    </div>
+    <div class="fr top-link">
+        <a href="#" target="mainCont" title="DeathGhost"><i
+                class="adminIcon"></i><span>管理员</span></a>
+    </div>
+    <div class="fh fh-link">
+        <a href="#" target="" title=""><i
+                class=""></i><span>返回前台</span></a>
+    </div>
+</div>
+
+<div class="left">
+    <div class="div1">
+        <div class="title_head">
+            系统设置
+        </div>
+        <a class="a1 href" href="javascript:void(0);"
+           onClick="openurl('{:U('WebSetting/index')}');"><div class="div2">
+            <div class="wzsz"></div>
+            网站设置
+        </div></a>
+        <a class="a1" href="#"><div class="div2">
+            <div class="xtgx"></div>
+            系统更新
+        </div></a>
+        <a class="a1" href="#"><div class="div2">
+            <div class="yxsz"></div>
+            邮箱设置
+        </div></a>
+        <a class="a1" href="#"><div class="div2">
+            <div class="zfsz"></div>
+            支付设置
+        </div></a>
+        <a class="a1" href="#"><div class="div2">
+            <div class="ztsz"></div>
+            主题设置
+        </div></a>
+        <div class="title_gl">
+            用户管理
+        </div>
+        <a class="a1" href="javascript:void(0);"
+           onClick="openurl('{:U('UserManager/index')}');"><div class="div2">
+            <div class="yhgl"></div>
+            用户管理
+        </div></a>
+    </div>
+</div>
+
+<div class="right">
+    <iframe id="rightFrame" name="rightFrame" width="100%" height="100%"
+            scrolling="auto" marginheight="0" marginwidth="0" align="center"
+            src="{:U('WebSetting/index')}"
+            style="border-left: 1px solid #000000;
+			border-top: 0px solid #ccc;
+			border-right: 0px solid #ccc;
+			border-bottom: 0px solid #ccc;
+			margin: 0; padding: 0;"></iframe>
+</div>
+
+</body>
+</html>

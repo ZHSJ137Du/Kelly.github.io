@@ -1,0 +1,153 @@
+@charset "UTF-8";
+/**
+ * main.css
+ * @authors EMPTY CHEN (23989902@qq.com)
+ * @date    2016-03-29 12:05:38
+ * @version $Id$
+ */
+body{}
+a{text-decoration: none;font-size: 1em}
+a:hover{text-decoration: none;}
+.clear{clear: both;}
+.fb{font-weight: bold;}
+.f16{font-size: 16px;}
+.pd0{padding: 0}
+.pdtb20{padding: 20px 0 }
+.pt8{padding-top: 8px }
+.pb8{padding-bottom: 8px }
+.mt8{margin-top: 8px}
+.mt20{margin-top: 20px}
+.ml8{margin-left: 8px}
+.mr8{margin-right: 8px}
+.menu{width: 160px; background:#0D4769; position: absolute;
+    z-index: 1000;float: left;clear: right;  height: 100%}
+.menu ul{padding: 0;margin:0;}
+.menu ul li{list-style: none;color: #fff;}
+ul li a i{
+	    font-size: 16px;
+    margin-right: 5px;
+    text-shadow: none;
+}
+.main{  float: left;
+    
+    left: 0px;
+    margin-top: 0px; 
+    width:100%;
+    position:absolute;
+    height: 100%;
+    background: #eee; 
+}
+
+.main .cont{margin-left: 160px;}
+ 
+ 
+/*左侧菜单*/
+        .sidebar-menu a{
+           
+        }
+        /*一级菜单*/
+        .menu-first{
+            display: block;
+            height:40px;
+            line-height:40px; 
+            padding: 0; 
+            font-weight: normal;
+            color: #ddd;
+            text-indent: 8px;
+            border-bottom: 1px solid #304f69;
+
+        }
+
+         .menu-first-nobor{
+            border: none;
+         }
+        /*一级菜单鼠标划过状态*/
+        .menu-first:hover{
+            text-decoration: none;
+            background-color: #0F81CB;
+            color: #ddd;
+        }
+        .menu-first:focus{background: #0F81CB;color: #fff;text-decoration: none;}
+        /*二级菜单*/
+        .menu-second li a{
+            background-color: #f5f5f5;
+            height:35px;
+            line-height:35px;
+            border-top: 1px solid #efefef; 
+            font-size: 12px;
+            text-indent: 16px;
+            cursor: pointer;
+        }
+        /*二级菜单鼠标划过样式*/
+        .menu-second li a:hover {
+            color: #fff;
+            text-decoration: none;
+            background-color: #4EB0E1;
+            border-top: 1px solid #83ceed; 
+            border-right: 3px solid #f8881c;
+            border-left: 3px solid #66c3ec;
+            border-bottom: 1px solid #317293; 
+        }
+        /*二级菜单选中状态*/
+        .menu-second-selected {
+            background-color: #66c3ec;
+            height:31px;
+            line-height:31px; 
+     
+            text-align:center;
+        }
+        /*覆盖bootstrap的样式*/
+        .nav-list,.nav-list li a{
+            padding: 0px;
+            margin: 0px;
+        }
+
+.logo{width: 80px; text-indent: 16px; }
+.logo img{max-width:80px;}
+.page{float: left;}
+.ctitle{font-weight: bold;font-size: 16px;}
+.mytrash,.myedit{cursor: pointer;padding: 0 6px;display: inline-block;}
+.w80{width: 80px}
+.w200{width: 200px}
+.w120{width:120px}
+.w50{width: 50px}
+.wmx640{max-width: 640px;}
+ul.dful {padding: 0;margin:0;}
+ul.dful li{list-style:none;clear: both;margin: 8px;padding: 8px}
+.dful li label{font-size: 1em;text-align: right;padding: 0} 
+.line{width: 100%;height: 1px;font-size: 0;border-top:1px solid #eee;}
+ul.dful li p{color: #ccc;font-size: 12px;}
+#loading{ display: none; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; background-color: black; z-index:1000; -moz-opacity: 0.7; opacity:.70; filter: alpha(opacity=70);color:#fff;}
+.d-inline{display: inline-block;}
+input,button{ vertical-align:middle} 
+select.form-control{padding: 0;display: inline-block;}
+.spang1,.spang0{background: #39DA3C; color:#fff;padding:5px 8px;font-size: 12px;border-radius: 2px;}
+.spang0{background: #aaa;}
+select{font-size: 14px;}
+span.ned{color: red;font-size: 10px}
+table.fsmi{font-size: 12px;}
+table.fsmi td{padding: 2px;}
+
+.goods_cate_box{padding: 4px;  }
+.goods_cate_box li{display: block; cursor: pointer;padding:2px 5px;border-radius:3px; margin-top: 1px; font-size: 12px;}
+.goods_cate_box li.c0{background:#369; color: #fff; }
+.goods_cate_box li.c0 a{  color: #fff; }
+.goods_cate_box li:hover{background: #BCE5F9}
+.goods_cate_box li a{color:#333;}
+.choosegoods{width: 20%; max-width: 200px;border: none;border-bottom:1px solid #666; }
+.storageremark{border: none;border-bottom:1px solid #eee;}
+.goodstitle{height: 28px;background: #369;color:#fff;border-radius:3px;padding: 5px}
+span.smaker{color:#ccc; font-size: 12px;text-shadow: #ccc 1px 1px 2px;}
+.tbtrc,.tbtrp,.tbtrps,.tbtrrm{border:none;width:100%;text-align: left;}
+.tbtrps{background: none;text-align: right;}
+.ssum{color: #BE1010}
+.checkgood{color: #ccc; cursor: pointer;}
+.innotop input,.innotop button,.innotop span{vertical-align:middle;}
+ 
+
+ .label-l{
+    font-size:12px;
+ }
+
+
+

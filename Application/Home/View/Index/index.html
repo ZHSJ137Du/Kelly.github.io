@@ -1,0 +1,173 @@
+﻿<extend name="Public:index" />
+<block name="css_js">    
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/index_slider.css"> 
+</block>
+<block name="content">
+  <!-- pictures cartoon -->
+  <div class="hidden-phone main-carousel">
+    <div id="banner" class="carousel slide" data-ride="carousel" data-wrap="true" data-interval="4000">
+      <ol class="carousel-indicators">
+        <volist name="banners" id="v">
+          <li data-target="#banner" data-slide-to="{$i-1}" class="<if condition='($i eq 1)'> active</if>"></li>
+        </volist>
+      </ol>
+      <div class="carousel-inner">
+        <volist name="banners" id="vo">
+          <div class="item <if condition='($i eq 1)'>active</if>">
+              <a href="{$vo['link']}">
+              <img style="width:100%;" src="__PUBLIC__/Home/{$vo['img_url']}" alt=""></a>
+          </div>
+        </volist>
+      </div>
+      <a class="carousel-control left" href="#banner" data-slide="prev"></a>
+      <a class="carousel-control right" href="#banner" data-slide="next"></a>
+    </div>
+  </div>
+  <!-- 分类 -->
+  <div class="course-category">
+    <div class="container">
+      <div class="course-category-inner">
+        <div style="margin-bottom:35px">
+          <div style="font-size:2em" class="pull-left">课程分类</div>
+          <a class="theme-color pull-right" href="{:U('Course/index?order=click_num')}">查看全部 》</a>
+          <div class="clearfix"></div>
+        </div>
+        <div class="course-category-list">
+          <a class="category-btn btn" href="{:U('Course/index?type_name=科技')}">科技创新</a>
+          <a class="category-btn btn" href="{:U('Course/index?type_name=管理')}">管理学</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--课程栏目-->
+  <div style="padding:0 5px">
+    <div class="container dxd-container">
+      <div class="row" style="margin-top:10px">
+        <div class="span8">
+          <div style="margin-bottom:36px; solid #354b59;font-size:2em;">热点课程
+            <div class="pull-right" style="font-size:14px">
+              <a class="theme-color" href="{:U('Course/index?order=click_num')}">查看全部 》</a></div>
+          </div>
+          <div id="yw1" class="list-view">
+            <div class="items">
+              <ul class="thumbnails">
+                <foreach name="activeCourse" item="course">
+                  <li class="span3">
+                    <div class="course-card">
+                      <a href="__APP__/Course/courseDetail?id={$course.id}">
+                        <img style="width: 100%;height:200px;" class="hidden-phone" src={$course.course_icon} alt="image"></a>
+                      <div style="border:1px solid #eee;">
+                        <a style="display:block;color:#333;font-size:18px;   text-align: left;line-height: 28px;padding: 25px 25px 0 25px;" href="__APP__/Course/courseDetail?id={$course.id}">{$course.course_name}</a>
+                        <div style="padding:18px 25px">
+                          <div class="pull-left">
+                            <strong class="orange-color">访问数：{$course.click_num}次</strong></div>
+                          <div class="pull-right muted">已有&nbsp;{$course.student_num}&nbsp;同学</div>
+                          <div class="clearfix"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </foreach>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="tabbable course-list">
+            <ul class="nav nav-tabs">
+              <li class="active">
+                <a href="#tab1" data-toggle="tab">热门课程</a></li>
+              <li>
+                <a href="#tab2" data-toggle="tab">推荐课程</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab1">
+                <div id="yw2" class="list-view">
+                  <div class="items">                   
+                    <foreach name="activeListHot" item="course">
+                      <div>{++$temp1}&nbsp;.
+                        <a style="color:#666;" href="__APP__/Course/courseDetail?id={$course.id}">{$course.course_name}</a>
+                        <span class="pull-right" style="color:#999">{$course.student_num}</span>
+                        <div class="clearfix"></div>
+                      </div>
+                      <hr style="margin:8px 0;border:1px dashed #ccc">
+                    </foreach>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab2">
+                <div id="yw3" class="list-view">
+                  <div class="items">
+                    <foreach name="activeListRec" item="course">
+                      <div>{++$temp2}&nbsp;.
+                        <a style="color:#666;" href="__APP__/Course/courseDetail?id={$course.id}">{$course.course_name}</a>
+                        <span class="pull-right" style="color:#999">{$course.click_num}</span>
+                        <div class="clearfix"></div>
+                      </div>
+                      <hr style="margin:8px 0;border:1px dashed #ccc">
+                    </foreach>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div id="yw4" class="list-view">
+        <div class="items">
+          <div class="row" style="margin-top:50px">
+            <div class="span12">
+              <div style="margin-bottom:36px;font-size:2em;" class="light-green">科技创新
+                <div class="pull-right" style="font-size:14px">
+                  <a class="theme-color" href="{:U('Course/index?type_name=科技')}">查看全部 》</a></div>
+              </div>
+              <div id="yw5" class="list-view">
+                <div class="items">
+                  <ul class="thumbnails">
+                    <foreach name="scienceList" item="course">
+                      <li class="span3" courseid="72">
+                        <div class="course-card">
+                          <a href="__APP__/Course/courseDetail?id={$course.course_id}">
+                            <img style="width: 270px;height:200px;" class="hidden-phone" src={$course.course_icon} alt="image"></a>
+                          <div style="border:1px solid #eee;">
+                            <a style="display:block;color:#333;font-size:18px;   text-align: left;line-height: 28px;padding: 25px 25px 0 25px;" href="__APP__/Course/courseDetail?id={$course.id}">{$course.course_name}</a>
+                            <div style="padding:18px 25px">
+                              <div class="pull-left">
+                                <strong class="orange-color">访问数：{$course.click_num}次</strong></div>
+                              <div class="pull-right muted">已有&nbsp;{$course.student_num}&nbsp;同学</div>
+                              <div class="clearfix"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </foreach>                     
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+      </div>    
+      <div class="row">
+        <div class="span12">
+          <div style="font-size:20px;background-color:#ececec;margin-top: 40px;
+          margin-bottom: 40px;
+          padding: 20px 40px;">
+            <div class="pull-left" style="margin-right:30px;">友情链接:</div>
+            <div class="pull-left">
+              <a href="#" class=" light-green" style="margin-right:30px;" target="#">腾讯课堂</a>
+              <a href="#" class=" light-green" style="margin-right:30px;" target="#">腾讯课堂</a>
+              <a href="#" class=" light-green" style="margin-right:30px;" target="#">腾讯课堂</a>
+              <a href="#" class=" light-green" style="margin-right:30px;" target="#">腾讯课堂</a>
+              <a href="#" class=" light-green" style="margin-right:30px;" target="#">腾讯课堂</a>
+              </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  </div>
+</block>

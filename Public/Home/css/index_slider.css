@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+.main-carousel .carousel-control{
+	width: 34px !important;
+	height: 80px !important;
+}
+.main-carousel .carousel-control.right {
+  right: 20px;
+  left: auto;
+  background: url(../images/a_l.png) no-repeat;
+  background-position: -34px 0;
+  z-index: 3px
+}
+.main-carousel .carousel-control.left {
+  left: 20px;
+  background: url(../images/a_l.png) no-repeat;
+}

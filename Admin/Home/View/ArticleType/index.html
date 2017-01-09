@@ -1,0 +1,80 @@
+<!DCOTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>文章类型管理</title>
+	<link rel="stylesheet" href="__PUBLIC__/Admin/libs/bootstrap-3.3.0/css/bootstrap.min.css"  />
+
+	<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.1.11.1.min.js"></script>
+	<script type="text/javascript" scr="__PIUBLIC__/Admin/libs/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+
+<style>
+table{margin-top: 20px; text-align:center;}
+td{padding-left: 10px;}
+tr{height: 30px; border-bottom: 1px solid #ccc; }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">后台</a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav">
+            <li><a href="#">课程</a></li>
+            <li><a href="{:U('/community')}">社区</a></li>
+            <li class="active"><a href="{:U('index')}">文章</a></li>
+            <li><a href="#">用户</a></li>
+            <li><a href="#">设置</a></li>
+        </ul>
+    </div>
+    </div>
+</nav>
+<div class="container">
+	<div class="col-md-2" style="margin-top:30px; height:100%; border-right:1px solid #ccc;">
+		<div style="margin-top:30px;">
+			<a href="{:U('index')}">文章类型管理</a>
+		</div>
+		<div>
+			<a href="{:U('/Article/index')}">文章管理</a>
+		</div>
+	</div>
+	<div class="col-md-10">
+		<h1 style="text-align:center;">文章类型管理</h1>
+		<div style="text-align:right;">
+			<p>第{$page}页 共{$maxpage}页  共{$count}种</p>
+		</div>
+		<form action="{:U('add')}" method="post">
+		<table cellspacing="10" align="center">
+			<tr>
+				<td>类型ID</td>
+				<td>文章类型名称</td>
+				<td>操作</td>
+			</tr>
+		<volist name="data" id="vo">
+			<tr>
+				<td>{$vo.id}</td>
+				<td>{$vo.type_name}</td>
+				<td>
+					<a href="{:U('delete')}?id={$vo.id}">删除</a>
+					<a href="{:U('alter')}?id={$vo.id}">修改</a>
+				</td>
+			</tr>
+		</volist>
+			<tr>
+				<td></td>
+				<td><input type="text" name="name" ></td>
+				<td><input type="submit" value="添加"></td>
+			</tr>
+		</table>
+		</form>
+		<div style="text-align: center; margin-top: 50px;">
+			<for start="1" end="$maxpage+1">
+				<a href="{:U('index')}?page={$i}" style="margin: 5px;">{$i}</a>
+			</for>
+		</div>
+	</div>
+</div>
+</body>
+</html>

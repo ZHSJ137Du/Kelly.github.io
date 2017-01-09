@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">  
+  <head>
+    <meta charset="utf-8">
+     <title>{$configs.title}</title>
+	
+	
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/bootstrap-3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/general_nav.css">
+	<link rel="stylesheet" id="dashicons-css" href="__PUBLIC__/Home/css/style.min.css" type="text/css">
+    <script src="__PUBLIC__/Home/js/jquery-3.1.1.min.js"></script>
+	<script  src="__PUBLIC__/Home/css/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+	
+  
+
+	
+	
+	
+	
+  </head>
+  
+  <body>
+    <div class="head-bar">
+      <div class="container ">
+        <div style="margin-left: 0px;" class="">
+          <div style="width: 12%; float: left;">
+            <a href="__APP__">
+              <img style="vertical-align: middle;padding-top:5px" src="__PUBLIC__/Home/Upload/{$configs.logo_url}"></a>
+          </div>
+          <div style="float: left; width: 80%; margin-top: 28px;">
+            <a style="color: rgb(255, 255, 255) ! important; font-size: 28px; font-family: &quot;微软雅黑&quot;; padding-left: 18px;" href="__APP__	" title="">{$configs.subtitle}</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+	<div class="main-nav">
+<div style="margin-bottom:0;" class="navbar navbar-inverse">
+<div class="navbar-inner"><div class="container">
+<ul class="hidden-phone dxd-navbar-left-items nav" id="yw8">
+<li class="{$active =='home' ? 'active':''}"><a href="__APP__">首页</a></li>
+<li class="{$active =='home' ? 'active':''}"><a href="__APP__/Course">课程</a></li>
+<li class="{$active =='home' ? 'active':''}"><a href="__APP__/Article">文章</a></li>
+<li class="{$active =='home' ? 'active':''}"><a href="__APP__/Bbs">社区</a></li></ul>
+
+<ul class="pull-right hidden-phone dxd-navbar-right-items nav" id="yw9">
+ <if condition="$lo.id eq null">
+<li><a href="__APP__/Login/register"><span class="dxd-notice">注册</span></a></li>
+<li><a href="__APP__/Login">登录</a></li>
+ <else />
+<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">用户中心<span class="caret"></span></a>
+
+<ul id="yw10" class="dropdown-menu">
+<li><a tabindex="-1" href="__APP__/Community">我的社区</a></li>
+<li><a tabindex="-1" href="__APP__/Collect">我的收藏</a></li>
+<li><a tabindex="-1" href="__APP__/User/index/id/{$_SESSION.id}">用户设置</a></li>
+<li class="divider"></li><li><a tabindex="-1" href="__APP__/Login/logout">退出</a></li></ul>
+</li>
+</if>
+</ul>
+</div></div></div></div>
+<div class="visible-phone navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<ul id="yw11" class="nav">
+<li><a href="__APP__">首页</a></li>
+<li><a href="__APP__/Course">课程</a></li>
+<li><a href="__APP__/Article">文章</a></li>
+<li><a href="__APP__/Bbs">社区</a></li></ul></div></div></div>
+ 
+ 
+   
+    <block name="community"></block>
+    <block name="collect"></block>
+    <block name="user"></block>
+    <block name="login"></block>
+    <block name="register"></block>
+    <block name="personal"></block>
+    <block name="courseDetail"></block>
+    <div class="light-green-background">
+      <div class="container">
+        <div class="row">
+          <div style="margin-top:40px;margin-bottom:20px;">
+            <div class="span3 offset1" style="color:#FFF;margin-right:45px;">
+              <h3>关于我们</h3>
+              <p>这是一个网络教育课程
+                <br>免费探索兴趣爱好的网站</p></div>
+            <div class="span3" style="color:#FFF;margin-right:45px;">
+              <h3>联系合作</h3>
+              <p>
+                <a style="color:#FFF;" href="#">联系我们</a></p>
+              <p>
+                <a style="color:#FFF;" href="#">合作方式</a></p>
+            </div>
+            <div class="span3" style="color:#FFF;margin-right:45px;">
+              <h3>关注我们</h3>
+              <p>
+                <a style="color:#FFF;" href="#">微博</a></p>
+              <p>
+                <a style="color:#FFF;" href="#">微信</a></p>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="green-background">
+      <div class="container">
+        <div class="row">
+          <div class="span11 offset1">
+            <div style="padding:15px 0;color:white;">&nbsp;&nbsp;{$configs.icp} &nbsp;&nbsp;&nbsp; Copyright © 2015-2016</div></div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

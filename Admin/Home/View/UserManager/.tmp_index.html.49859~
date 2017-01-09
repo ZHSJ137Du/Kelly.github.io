@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理界面</title>
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/bootstrap.min.css">
+	<link rel="stylesheet" href="__PUBLIC__/Admin/css/page.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            width: 1150px;
+            text-align: center;
+        }
+        .left-line, .right-line{
+            width: 350px;
+            border:.5px solid #555555;
+            display: inline-block;
+            position: relative;
+            bottom: 8px;
+        }
+        table thead tr th {
+            text-align: center;
+        }
+		.pagination {
+			line-height:30px;
+		}
+    </style>
+</head>
+<body>
+<header>
+    <!-- 左横线  -->
+    <div class="left-line"></div>
+    <h1 style="display: inline; margin:0 60px;font-family: 'microsoft yahei'; font-weight: bold;" > 用户管理</h1>
+    <!-- 右横线 -->
+    <div class="right-line"></div>
+</header>
+<div style='padding:20px; margin-top: 80px;' id='app' >
+    <div class='panel panel-primary'>
+
+        <table class='table table-bordered table-striped text-center'>
+            <thead>
+            <tr>
+                <th class="center">
+				<input class="check-all" type="checkbox" />
+			    </th>
+                <th>ID</th>
+                <th>用户名</th>
+                <th>手机号</th>
+				<th>邮箱</th>
+				<th>是否为管理员</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <notempty name="user_list">
+				<volist name="user_list" id="vo">
+				<tr>
+					<td class="center">
+						<input class="ids" type="checkbox" name="ids[]" value="{$vo.id}_{$vo.power}" />
+					</td>
+					<td>{$vo.id} </td>
+					<td>{$vo.user_name}</td>
+					<td>{$vo.phone}</td>
+					<td>{$vo.email}</td>
+					<td>{$vo.power_text}</td>
+					<td>{$vo.status_text}</td>
+					<td>
+						<a href="{:U('UserManager/setStatus?ids='.$vo['id'].'&status='.abs(1-$vo['status']))}">{$vo.status|show_status_op}</a>
+						<a href="{:U('UserManager/del?ids='.$vo['id'].'&power='.$vo['power'])}" class="confirm ajax-get">删除</a>
+		            </td>
+				</tr>
+				</volist>
+				<else/>
+				<td colspan="6" class="text-center"> aOh! 暂时还没有内容! </td>
+				</notempty>
+            </tbody>
+        </table>
+            <notempty name="page">
+               <div style="float:right;margin:20px 186px 0 0;" class="badoo">{$page}</div>
+            </notempty>
+    </div>
+<button class="btn btn-default btn-sm ajax-post confirm" target-form="ids" style="background-color: #8b9aa3!important;border-color: #abbac3; color:#ffffff; margin-top:20px;" url="{:U('UserManager/del')}">全 部 删 除</button>
+</div>
+<script src='__PUBLIC__/Admin/js/jquery-1.7.2.min.js'></script>
+<script src="__PUBLIC__/Admin/js/bootstrap.min.js"></script>
+<script>
+;$(function(){
+	//全选的实现
+	$(".check-all").click(function(){
+		$(".ids").prop("checked", this.checked);
+	});
+	$(".ids").click(function(){
+		var option = $(".ids");
+		option.each(function(i){
+			if(!this.checked){
+				$(".check-all").prop("checked", false);
+				return false;
+			}else{
+				$(".check-all").prop("checked", true);
+			}
+		});
+	});
+	
+    //ajax post submit请求
+    $('.ajax-get').click(function(){
+   		 var target,query,form;
+        var target_form = $(this).attr('target-form');
+        var that = this;
+        var nead_confirm=false;
+		if (($(this).attr('type') == 'submit') || (target = $(this).attr('href')) || (target = $(this).attr('url'))) {
+			form = $('.'+target_form);
+	        if(!confirm('确认要执行该操作吗?')){
+	            return false;
+	        }
+			target = $(this).attr('url');
+			query = form.serialize();
+			$.post(target,query).success(function(data){
+				 if (data.status == 1) {
+				 	location.reload();
+					//TO DO
+				 }else{
+				 	//alert(data.info);
+				 	return false;
+				 }
+			});
+		}
+    });
+	
+	//ajax post submit请求
+    $('.ajax-post').click(function(){
+   		 var target,query,form;
+        var target_form = $(this).attr('target-form');
+        var that = this;
+        var nead_confirm=false;
+		if (($(this).attr('type') == 'submit') || (target = $(this).attr('href')) || (target = $(this).attr('url'))) {
+			form = $('.'+target_form);
+	        if(!confirm('确认要执行该操作吗?')){
+	            return false;
+	        }
+			target = $(this).attr('url');
+			query = form.serialize();
+			$.post(target,query).success(function(data){
+				 if (data.status == 1) {
+				 	location.reload();
+					//TO DO
+				 }else{
+				 	//TO DO
+					alert(data.info);
+				 	return false;
+				 }
+			});
+		}
+    });
+});
+</script>
+</body>
+</html>

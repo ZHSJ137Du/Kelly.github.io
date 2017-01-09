@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>index</title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+	<!-- 可选的Bootstrap主题文件（一般不用引入） 
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">-->
+
+	<link rel="stylesheet" href="__PUBLIC__/home/css/main.css">
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<header>
+		<div class="head-bar">
+			
+		</div>
+		<div class="navbar navbar-default navbar-fixed-top " role="navigation">
+			<div class="container">
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="{$active =='home' ? 'active':''}"><a href="__APP__">首页</a></li>
+						<li class="{$active =='home' ? 'active':''}"><a href="#">课程</a></li>
+						<li class="{$active =='essay' ? 'active':''}"><a href="__APP__/essay">文章</a></li>
+						<li class="{$active =='bbs' ? 'active':''}"><a href="__APP__/bbs">社区</a></li>
+					</ul>
+					<ul class="pull-right hidden-phone dxd-navbar-right-items nav" id="yw9">
+						<if  condition="!($islogin eq 1)">
+						<li><a href="__APP__/Login/register"><span class="dxd-notice">注册</span></a></li>
+						<li><a href="__APP__/Login">登录</a></li>
+						 <else />
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">用户中心<span class="caret"></span></a>
+
+						<ul id="yw10" class="dropdown-menu">
+						<li><a tabindex="-1" href="__APP__/Community">我的社区</a></li>
+						<li><a tabindex="-1" href="__APP__/Collect">我的收藏</a></li>
+						<li><a tabindex="-1" href="__APP__/User/index/id/{$_SESSION.id}">用户设置</a></li>
+						<li class="divider"></li><li><a tabindex="-1" href="__APP__/Login/logout">退出</a></li></ul>
+						</li>
+						</if>
+						</ul>
+					
+					
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<block name="main-content">
+	
+	</block>
+	
+	<footer >
+		<div class="footer-h container" >
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-4">
+					<h4>关于我们</h4>
+					<p>关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们</p>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4">
+					<h4>合作区域</h4>
+					<a href="#">合作区域</a>
+					<a href="#">合作区域</a>
+					<a href="#">合作区域</a>
+					<a href="#">合作区域</a>
+					<a href="#">合作区域</a>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4">
+					<h4>友情链接</h4>
+					<a href="#">友情链接</a>
+					<a href="#">友情链接</a>
+					<a href="#">友情链接</a>
+					<a href="#">友情链接</a>
+					<a href="#">友情链接</a>
+				</div>
+				
+			</div>
+		</div>
+		<div class="footer-f container">
+			  粤ICP备10086号     Copyright © 2016
+		</div>
+	</footer>
+	
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		$(function(){
+			$('#hot-a').click(function(event) {
+				$(this).addClass('active');
+				$('#all-a').removeClass('active');
+				$('.hot').css("display","block");
+				$('.all').css("display","none");
+			});
+			$('#all-a').click(function(event) {
+				$(this).addClass('active');
+				$('#hot-a').removeClass('active');
+				$('.all').css("display","block");
+				$('.hot').css("display","none");
+			});
+
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+.menu_box{    height: 100%; line-height: 45px; }  
+#test{ : 0; }
+.second_head_box{height: 45px;background-color:#ececec;}
+    /*.setting_box{background-color:#ccc;}*/
+.second_head_box1{height: 45px;background-color:#ffffff;}
+.nav_box li{float: left; display: inline;width: 90px;text-align: center;}
+.nav_box li a{ color: #333;font-size: 18px; padding: 10px;}
+.nav_box li:hover{background-color: #fff;}
+.nav_box li a:hover{color: #0aac87 !important}
+.set_newnavbox li{ background-color: #88aaff; line-height: 3em; }
+.set_newnavbox li a{ color: #ffffff; }
+.set_newnavbox .active1{ background-color: #0088cc; }
+.set_newnavbox .active1 a{ color: #ffffff; }
+.set_newnavbox li:hover{background-color: #0088cc;}
+.set_newnavbox li a:hover{color: #ffffff !important}
+
+.active{background-color: #fff;height: 45px}
+.active a{color: #0aac87 !important}
+.setting_box li{float: left;}
+.setting_box li a{padding: 0 5px}
+li{list-style: none;}
+.menu_two_box{    height: 100%;  line-height: 45px;}
+    /*如果给盒子，ie下面的外边距会多15像素*/
+.colsum { width: 65%; }
+.table>tbody>tr{margin-top: 10px; }
+.table>tbody>.tr_settop>td{ border-top: 0;}
+.table>tbody>tr>.td_settop{color:#0aac87;}
+
+.table>tbody>tr>td>a{ color: #000000; }
+.table>tbody>tr>.td_active>a{ color:#00876b; }
+.table>tbody>tr>td:hover{background-color:#88aaff; }
+.table>tbody>tr>td.colsum:hover{background-color:#ffffff; }
+
+.thumbnails{ margin-left: 0 !important; }
+
+.pagination{ text-align: center; }
+.pagination{ line-height: 30px; }
+.pagination ul li a{ background-color: #88aaff !important; }
+.pagination ul li a:hover{ background-color: #0088cc !important; }
+.pagination ul li.active a{ background-color: #0088cc !important; color: #ffffff !important;}
+.pagination ul li.pages{font-size: 1.2em !important; }

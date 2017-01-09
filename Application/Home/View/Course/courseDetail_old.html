@@ -1,0 +1,103 @@
+<extend name="Public:index" />
+<block name="courseDetail">
+  <!DOCTYPE html>
+  <!-- saved from url=(0042)http://www.bslxx.com/edu/course/me/collect -->
+  <html lang="zh-CN">    
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	   <script  src="__PUBLIC__/Home/js/function.js"></script>
+      <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/bootstrap-3.3.0/css/bootstrap-responsive.min.css">  
+      <style type="text/css"> 
+        .setposition{ margin-left: 5%; }
+        *{margin:0;padding:0;}
+        ul,li{list-style:none;}
+        a{text-decoration:none;outline:none;color:#07f;}
+        .f10{border:1px solid #ddd;padding:10px;width:90%;margin:10px auto;}
+        .clear{clear:both;}
+        .wrap{width:90%;margin:10px auto;}
+        .l_box{width:490px;float:left;}
+        .f20{width:100%;float:left;border:1px solid #ddd;padding:10px;margin:0 0 10px;}
+        .f40{width:250px;float:right;border:1px solid #ddd;margin:0 0 10px;}
+        .f11{width:50%;float:left;}
+        .f12{width:50%;float:right;}
+        .f12 h3{text-align:center;margin:40px auto 15px;}
+        .content{border:1px solid #ddd;float:left;width:100%;margin:0 0 10px;}
+        .content h3,.f40 h3{background:#eee;font-size:16px;line-height:30px;text-indent:1em;}
+        .content li{height:35px;line-height:35px;position:relative;padding:0 10px;}
+        .content li a b{color:#666;padding:0 8px 0 0;}
+        .content li span{position:absolute;top:0px;right:10px;color:#aaa;}
+        .f30{width:460px;float:left;margin:0 0 10px;}
+        .f40 li {padding:10px;height:50px;}
+        .f40 li a img{width:50px;height:50px;border-radius:50%;float:left;margin:0 10px 0 0;}
+        .f40 li a span,.f40 li a p{width:150px;float:left;}
+        .f40 li a p{color:#333;}  
+      </style>
+	  
+	 
+    </head>    
+    <body>
+    <div class="setposition">
+      <!-- Course detail begin -->
+        <div class="f10">
+      <div class="f11"><img  width="100%" src="__PUBLIC__/Home/images/{$courses.course_icon}" /></div>
+        <div class="f12"> 
+          <h3>{$courses.course_names}</h3>
+                <center><button id="button">干货值 61斤</button></center>
+         </div>
+		 
+		 
+		 <div class="dxd-course-header-right pull-right" style="padding-right:15px;margin-top:30px;">
+		 
+		 
+		  <if condition="$userCourse eq null">
+	<a class="a-join" id="{$courses.id}" style="margin-left:25px;padding-top:2px;" href="__APP__/collect/toggleCollect/id/{$courses.id}">收藏课程</a> 
+	<else />
+	<a class="a-join" id="{$courses.id}" style="margin-left:25px;padding-top:2px;" href="__APP__/collect/toggleCollect/id/{$courses.id}">取消收藏</a> 
+	 </if>
+	</div>
+         <div class="clear"></div>
+    </div>
+    <div class="wrap">
+      <div class="l_box">
+        <div class="f20">
+            {$courses.course_info}
+        </div>
+        <div class="content">
+          <h3>课时列表</h3>
+            <ul>
+              <li><a href="#"><b>课时1</b>00000000000000</a><span>50浏览量</span></li>
+              <li><a href="#"><b>课时1</b>00000000000000</a><span>50浏览量</span></li>
+              <li><a href="#"><b>课时1</b>00000000000000</a><span>50浏览量</span></li>
+            </ul>
+        </div>
+        <div class="f30">
+        <h4 style="size:12px; line-height:40px;">找到自己的职业生涯：</h4>
+        
+        <embed src="http://player.video.qiyi.com/ed8bd48f61e4b95fc40407148717a058/0/0/w_19rr9i20dt.swf-albumId=540250909-tvId=540250909-isPurchase=0-cnId=17" allowFullScreen="true" quality="high" width="480" height="350" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></div>
+        </div>
+        <div class="f40">
+        <h3>送货人</h3>
+            <ul>
+              <li><a href="#"><img  width="100%" src="__PUBLIC__/Home/images/pic1.jpg" /><span>名字</span><p>文字内容文字内容</p></a></li>
+              <li><a href="#"><img  width="100%" src="__PUBLIC__/Home/images/pic1.jpg" /><span>名字</span><p>文字内容文字内容</p></a></li>
+              <li><a href="#"><img  width="100%" src="__PUBLIC__/Home/images/pic1.jpg" /><span>名字</span><p>文字内容文字内容</p></a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <script src="__PUBLIC__/Home/js/jquery.1.11.1.min.js"></script>
+    <script src="__PUBLIC__/Home/js/jquery-ui.js"></script>
+    <script>
+    $( "#button" ).button();
+    $( "#button-icon" ).button({
+      icon: "ui-icon-gear",
+      showLabel: false
+    });
+  
+		</script>
+      <!-- Course detail end -->
+    </div>
+    </body>  
+  </html>
+</block>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理界面</title>
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/bootstrap.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            width: 1150px;
+            text-align: center;
+        }
+        .left-line, .right-line{
+            width: 350px;
+            border:.5px solid #555555;
+            display: inline-block;
+            position: relative;
+            bottom: 8px;
+        }
+        table thead tr th {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <!-- 左横线  -->
+    <div class="left-line"></div>
+    <h1 style="display: inline; margin:0 60px;font-family: 'microsoft yahei'; font-weight: bold;" > 用户管理</h1>
+    <!-- 右横线 -->
+    <div class="right-line"></div>
+</header>
+<div style='padding:20px; margin-top: 80px;' id='app' >
+    <div class='panel panel-primary'>
+
+        <table class='table table-bordered table-striped text-center'>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>用户名</th>
+                <th>用户组</th>
+                <th>加入时间</th>
+                <th>上次登录</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <template v-for='(row, index) in rows '>
+                <tr v-if='index>=(curpage-1)*pagesize&&index<curpage*pagesize'>
+                    <td>{{row.Id}}</td>
+                    <td>{{row.Ema}}</td>
+                    <td>{{row.User}}</td>
+                    <td>{{row.Group}}</td>
+                    <td>{{row.Data}}</td>
+                    <td>{{row.Login}}</td>
+                    <td>{{row.Statu}}</td>
+                    <td><a href='#' @click='Edit(row)'>编辑</a>&nbsp;&nbsp;<a href='#' @click='Delete(row.Id)'>删除</a></td>
+                </tr>
+            </template>
+            </tbody>
+        </table>
+    </div>
+    <nav style='float:right;'>
+        <ul class='pagination pagination-lg'>
+            <template v-for='page in Math.ceil(rows.length/pagesize)'>
+                <li v-on:click='PrePage()' id='prepage' v-if='page==1' class='disabled'><a href='#'>上一页</a></li>
+                <li v-if='page==1' class='active' v-on:click='NumPage(page, $event)'><a href='#'>{{page}}</a></li>
+                <li v-else v-on:click='NumPage(page, $event)'><a href='#'>{{page}}</a></li>
+                <li id='nextpage' v-on:click='NextPage()' v-if='page==Math.ceil(rows.length/pagesize)'><a href='#'>下一页</a></li>
+            </template>
+        </ul>
+    </nav>
+</div>
+<script src='__PUBLIC__/Admin/js/jquery-1.7.2.min.js'></script>
+<script src="__PUBLIC__/Admin/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/Admin/js/vue.js"></script>
+<script type='text/javascript'>
+    //Model
+    var data = {
+        rows: [
+            { Id: 1, Ema: '123456@qq.com', User: 'wujie', Group: 'teacher', Data: '2016-12-29',Login:'2016-8-19',Statu:'OK' },
+            { Id: 2, Ema: '123456@qq.com', User: 'wujie', Group: 'teacher', Data: '2016-12-29',Login:'2016-8-19',Statu:'OK' },
+            { Id: 3, Ema: '123456@qq.com', User: 'wujie', Group: 'teacher', Data: '2016-12-29',Login:'2016-8-19',Statu:'OK' },
+            { Id: 4, Ema: '123456@qq.com', User: 'wujie', Group: 'teacher', Data: '2016-12-29',Login:'2016-8-19',Statu:'OK' },
+            { Id: 5, Ema: '123456@qq.com', User: 'wujie', Group: 'teacher', Data: '2016-12-29',Login:'2016-8-19',Statu:'OK' },
+            { Id: 6, Ema: '123456@qq.com', User: 'wujie', Group: 'teacher', Data: '2016-12-29',Login:'2016-8-19',Statu:'OK' },
+            { Id: 7, Ema: '123456@qq.com', User: 'wujie', Group: 'teacher', Data: '2016-12-29',Login:'2016-8-19',Statu:'OK' },
+            { Id: 8, Ema: '123456@qq.com', User: 'wujie', Group: 'teacher', Data: '2016-12-29',Login:'2016-8-19',Statu:'OK' },{ Id: 1, Ema: '123456@qq.com', User: 'wujie', Group: 'teacher', Data: '2016-12-29',Login:'2016-8-19',Statu:'OK' },
+            { Id: 9, Ema: '123456@qq.com', User: 'wujie', Group: 'teacher', Data: '2016-12-29',Login:'2016-8-19',Statu:'OK' },
+            { Id: 10, Ema: '123456@qq.com', User: 'wujie', Group: 'teacher', Data: '2016-12-29',Login:'2016-8-19',Statu:'OK' },
+
+        ],
+        pagesize: 5,
+        curpage:1,//当前页的页码
+    };
+    //ViewModel
+    var vue = new Vue({
+        el: '#app',
+        data: data,
+        methods: {
+            //上一页方法
+            PrePage: function (event) {
+                $('.pagination .active').prev().trigger('click');
+            },
+            //下一页方法
+            NextPage: function (event) {
+                $('.pagination .active').next().trigger('click');
+            },
+            //点击页码的方法
+            NumPage: function (num, event) {
+                if (this.curpage == num) {
+                    return;
+                }
+                this.curpage = num;
+                $('.pagination li').removeClass('active');
+                if (event.target.tagName.toUpperCase() == 'LI') {
+                    $(event.target).addClass('active');
+                }
+                else {
+                    $(event.target).parent().addClass('active');
+                }
+                if (this.curpage == 1) {
+                    $('#prepage').addClass('disabled');
+                }
+                else {
+                    $('#prepage').removeClass('disabled');
+                }
+                if (this.curpage == Math.ceil(this.rows.length / this.pagesize)) {
+                    $('#nextpage').addClass('disabled');
+                }
+                else {
+                    $('#nextpage').removeClass('disabled');
+                }
+            },
+            Delete: function (id) {
+                //实际项目中参数操作肯定会涉及到id去后台删除，这里只是展示，先这么处理。
+                for (var i=0;i<this.rows.length;i++){
+                    if (this.rows[i].Id == id) {
+                        this.rows.splice(i, 1);
+                        break;
+                    }
+                }
+            },
+            Edit: function (row) {
+                this.rowtemplate = row;
+            },
+
+
+        }
+    });
+</script>
+</body>
+</html>

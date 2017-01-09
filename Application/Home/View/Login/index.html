@@ -1,0 +1,72 @@
+<extend name="Public:index" />
+<block name="login">
+<!-- Author: 马得中 -->
+<!-- Date:2017-1-7 -->
+    <!DOCTYPE html>
+    <html>
+        
+        <head>
+            <title>欢迎登录</title>
+            <meta charset="UTF-8">
+            <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/bootstrap-3.3.0/css/bootstrap-responsive.min.css">
+            <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.1.11.1.min.js"></script>
+            <script type="text/javascript" src="__PUBLIC__/Home/js/Validform_v5.3.2_min.js"></script>
+        </head>
+        
+        <body>
+            <div style="padding:0 5px">
+                <div class="container dxd-container" style="width: 300px;">
+                    <div class="row">
+                        <div class="span4 center ">
+                            <h2 style="text-align:center">欢迎您的到来！</h2>
+                            <div class="form">
+                                <form class="well" action="{:U('login/do_login')}" id="loginForm" method="post">
+                                    <div class="row success">
+                                        <label for="LoginForm_username" class="required">用户名：
+                                            <span class="required">*</span></label>
+                                        <input class="input-block-level" name="user_name" id="user_name" type="text" datatype="*">
+                                    </div>
+                                    <div class="row success">
+                                        <label for="LoginForm_password" class="required">密码：
+                                            <span class="required">*</span></label>
+                                        <input class="input-block-level" name="password" id="password" type="password" datatype="*">
+                                    </div>
+                                    <div class="row success">
+                                        <label for="LoginForm_rememberMe">验证码：</label>
+                                        <input type="text" class="input-block-level" name="verify_code" datatype="*">
+                                    </div>
+                                    <div class="row buttons">
+                                        <div class="pull-left">
+                                            <div class="form-group" style="width:150px" class="required">
+                                                <label for="LoginForm_rememberMe">
+                                                    <img src="{:U('Login/get_verify')}" class="verify_box" onclick="change_verify();" alt=""></label>
+                                    		</div>
+                                        </div>
+                                        <div class="pull-right">
+                                            <input class="btn btn-primary" type="submit" name="yt0" value="登陆">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="pull-left" style="margin-top: 6px;"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">function change_verify() {
+                    $('.verify_box').attr('src', "{:U('Login/get_verify')}?" + Math.random());
+                }</script>
+        </body>
+    
+    </html>
+    <script type="text/javascript">$(document).ready(function() {
+
+            $("#loginForm").Validform({
+                tiptype: 3
+            });
+
+        });</script>
+</block>

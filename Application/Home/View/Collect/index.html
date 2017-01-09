@@ -1,0 +1,56 @@
+<extend name="Public:index" />
+<block name="collect">
+<!-- Author: 盘志伟and林进雄 -->
+<!-- Date:2017-1-7 -->
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://www.bslxx.com/edu/course/me/collect -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/bootstrap-3.3.0/css/bootstrap-responsive.min.css">
+
+<body>
+<div style="padding:0 5px">
+ 
+<div class="container dxd-container">
+<div class="row ">
+<div class="span9 center">
+<div class="my-course-tabs" style="margin-top:20px;margin-bottom:20px;">
+<ul id="yw0" class="nav nav-pills"><li><a href="__APP__/Community">我的社区</a></li><li class="active"><a href="__APP__/Collect">我的收藏</a></li></ul> </div>
+<div id="yw1" class="list-view">
+<div class="items">
+<ul class="thumbnails">
+<foreach name="courses" item="course">
+<li class="span3" courseid="{$course.course_id}">
+<div class="course-card">
+<a href="__APP__/course/courseDetail/id/{$course.id}"><img style="width: 270px;height:200px;" class="hidden-phone" src="__PUBLIC__/Home/images/{$course.course_icon}" alt="image"></a> <div style="border:2px solid #eee;border-top:none;">
+<a style="display:block;color:#333;font-size:22px;height:50px;border-bottom:2px solid #eee;padding:25px;line-height:30px;" href="__APP__/course/courseDetail/id/{$course.id}">{$course.course_name}</a> <div style="padding:18px 25px">
+<div class="pull-left">
+<strong class="orange-color">干货值：{$course.click_num}斤</strong>
+</div>
+<div class="pull-right muted">
+已有{$course.course_info}同学
+</div>
+<div class="clearfix"></div>
+</div>
+</div>
+</div>
+</li>
+</foreach>
+
+</li></ul></div>
+<div class="pagination">{$page}</div>
+</div> </div>
+</div>
+<div class="clearfix"></div>
+</div> 
+</div>
+
+
+
+
+
+
+
+</body>
+
+</html>
+</block>

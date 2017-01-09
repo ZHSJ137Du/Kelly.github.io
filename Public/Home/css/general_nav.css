@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
+.nav > li > a:hover,
+  .nav > li.active > a {
+  color: #ffffff !important;
+  box-shadow: none;
+  background-color: #0088cc !important;
+}

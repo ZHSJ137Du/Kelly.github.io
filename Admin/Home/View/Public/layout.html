@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	 <title>admin</title> 
+	 <meta http-equiv='Content-Type' content="text/html;charset=utf-8">
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<!--link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"-->
+	<link rel="stylesheet" href="__PUBLIC__/Admin/css/bootstrap.min.css">
+	<link rel="stylesheet" href="__PUBLIC__/Admin/css/bootstrap-addtabs.css">
+	<link rel="stylesheet" href="__PUBLIC__/Admin/css/main.css">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<!--script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script-->
+	<script src="__PUBLIC__/Admin/js/jquery-1.11.1.min.js"></script>
+	<script src="__PUBLIC__/Admin/js/bootbox.min.js"></script>
+	<script src="__PUBLIC__/Admin/js/bootstrap-addtabs.js"></script>
+	<script src="__PUBLIC__/Admin/js/main.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 --> 
+	<script src="__PUBLIC__/Admin/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container-fluid pd0">
+	<div class="menu nav-collapse" id="menu"> 
+		<div class="logo pdtb20"><img src="__PUBLIC__/images/logo.png"></div>
+		<!--Sidebar content-->
+		<div class="sidebar-menu">
+			<a href="#s1" class="nav-header menu-first collapsed" data-toggle="collapse"><i class="fa fa-shopping-basket"></i>  课程管理</a>
+			<ul id="s1" class="nav nav-list collapse menu-second">
+				<li><a data-addtab="s11" href="__APP__/Course"><i class="fa fa-sign-out"></i> 课程列表</a></li>
+				<li><a data-addtab="s12" href="__APP__/CourseType"><i class="fa fa-reply"></i>  课程类型</a></li> 
+			</ul>
+
+			
+			<a href="#s5" class="nav-header menu-first collapsed" data-toggle="collapse"><i class="fa fa-cogs"></i> 系统设置</a>
+			<ul id="s5" class="nav nav-list collapse menu-second">			
+				<li><a data-addtab="s51" href="__APP__/IndexBanner"><i class="fa fa-street-view"></i> 主页设置</a></li> 
+			</ul>
+			<a href="javascript:logout()" class="nav-header menu-first menu-first-nobor  " ><i class="fa fa-external-link-square"></i> 退出系统</a>
+		</div>
+	</div>
+	<div class="main" id="main">
+		<div class="cont">
+			
+		<block name="main-content">
+		
+		</block>
+
+		</div>
+   	</div>
+  </div>  
+</body>
+</html>
+
+	 

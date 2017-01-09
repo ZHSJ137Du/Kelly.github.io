@@ -1,0 +1,38 @@
+<!DCOTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>操作结果</title>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">后台</a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav">
+            <li><a href="#">课程</a></li>
+            <li><a href="{:U('/community')}">社区</a></li>
+            <li class="active"><a href="{:U('index')}">文章</a></li>
+            <li><a href="#">用户</a></li>
+            <li><a href="#">设置</a></li>
+        </ul>
+    </div>
+    </div>
+</nav>
+	<div style="text-align: center;">
+	<a href="{:U('index')}">{$ret}! please click return!</a>
+	</div>
+	<script type="text/javascript">
+		function jump(){
+		//eq标签是如果等于,传入的ret变量的值等于error,则输出这句话
+			<eq name="ret" value="error">
+				alert("操作不成功！请重试！");
+			</eq>
+			window.location.href = "{:U('index')}";
+		}
+		setTimeout(jump(), 5000);
+	</script>
+</body>
+</html>
